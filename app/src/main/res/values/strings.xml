@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Компьютерный экзаменатор-тренажёр</string>
+    <string name="selekt1">Выберите комплект экзаменационных билетов</string>
+    <string name="sKomplekt">Комплект билетов:</string>
+    <string name="sExTick">Экзамен по билету</string>
+    <string name="sExTema">Экзамен по теме</string>
+    <string name="sPrVopr">Просмотр вопросов</string>
+    <string name="sNTick">Билетов:</string>
+    <string name="sNVopr">Вопросов:</string>
+    <string name="sL_Data">Личные данные</string>
+    <string name="sSet">Настройки</string>
+    <string name="sHelp">Помощь</string>
+    <string name="sExit">Старт</string>
+    <string name="s_ok">Сохранить</string>
+    <string name="work_num">Рабочее место №</string>
+    <string name="s_adr">Адрес сервера</string>
+    <string name="s_port">Порт сервера</string>
+    <string name="sNext">Далее</string>
+    <string name="sOtvets">Ответов:</string>
+    <string name="sErrors">Ошибок:</string>
+    <string name="sNumVoprBrowse">Вопрос:</string>
+    <string name="sVarOtveta">Варианты ответа:</string>
+    <string name="sTicket">Билет:</string>
+    <string name="sAnsw">Ответ???</string>
+    <string name="sNTems">Тем:</string>
+    <string name="sTems">Темы</string>
+    <string name="sTickets">Билеты</string>
+    <string name="sRez">Экзамен:</string>
+    <string name="sCena">Оценка:</string>
+    <string name="sNoAnsver">Не отвечено:</string>
+    <string name="sFontSize">Размер шрифта (10-20)</string>
+    <string name="sClose">Выход</string>
+</resources>

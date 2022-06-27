@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_gravity="fill" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="8dp">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/L2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+            <TextView android:layout_gravity="center_horizontal" android:id="@+id/tKomplekt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sKomplekt"/>
+            <TextView android:textStyle="bold" android:layout_gravity="center_horizontal" android:id="@+id/tName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp" android:text=" " android:layout_weight="2.44"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@+id/L3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/L2" android:layout_centerInParent="false" android:layout_centerHorizontal="true" android:layout_alignWithParentIfMissing="false">
+            <TextView android:layout_gravity="center_horizontal" android:id="@+id/tVoprMain" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sNTick"/>
+            <TextView android:textStyle="bold" android:layout_gravity="center_horizontal" android:id="@+id/tN_Ticket" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text=" "/>
+            <TextView android:id="@+id/tOtvets" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="@string/sNVopr"/>
+            <TextView android:textStyle="bold" android:layout_gravity="center_horizontal" android:id="@+id/tN_Vopr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text=" "/>
+            <TextView android:layout_gravity="center_horizontal" android:id="@+id/tTem" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="@string/sNTems"/>
+            <TextView android:textStyle="bold" android:layout_gravity="center_horizontal" android:id="@+id/tN_Tem" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text=" "/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="300dp" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_below="@+id/L3" android:layout_centerHorizontal="true">
+            <LinearLayout android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:id="@+id/bL_Data" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:minHeight="48dp" android:text="@string/sL_Data"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:id="@+id/bSet" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:minHeight="48dp" android:text="@string/sSet"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@+id/LLBut3" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:layout_gravity="center" android:id="@+id/bHelp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:minHeight="48dp" android:text="@string/sHelp" android:layout_weight="1"/>
+                <Button android:layout_gravity="center" android:id="@+id/bStart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:minHeight="48dp" android:text="@string/sExit" android:layout_weight="1"/>
+                <Button android:layout_gravity="center_vertical|clip_horizontal" android:id="@+id/bExit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sClose" android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

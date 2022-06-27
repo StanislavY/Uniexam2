@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="8dp">
+    <FrameLayout android:id="@+id/frameLayout1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Spinner android:id="@+id/spinner1" android:scrollbars="vertical" android:clickable="true" android:layout_width="match_parent" android:layout_height="36dp"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/frameLayout2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/frameLayout1">
+        <TextView android:textStyle="bold" android:id="@+id/tVopros" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="@string/sNumVoprBrowse"/>
+        <TextView android:textStyle="bold" android:layout_gravity="right" android:id="@+id/tVariant" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="300dp" android:text="@string/sVarOtveta"/>
+    </FrameLayout>
+    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar5" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="5" android:layout_below="@+id/tZap3B" android:layout_alignLeft="@+id/chVar4"/>
+    <TextView android:id="@+id/tZap4B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="T" android:layout_below="@+id/chVar5" android:layout_alignLeft="@+id/tZap3B"/>
+    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar6" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="6" android:layout_below="@+id/tZap4B" android:layout_alignLeft="@+id/chVar5"/>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/linearLayout2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@+id/linearLayout1" android:layout_alignLeft="@+id/tVoprMain">
+        <TextView android:layout_gravity="center_vertical" android:id="@+id/tNumVoprBrowse" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="@string/sNumVoprBrowse"/>
+        <TextView android:textSize="16sp" android:textStyle="bold" android:layout_gravity="center_vertical" android:id="@+id/tOtvetYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="  "/>
+        <ImageButton android:id="@+id/bPrev" android:layout_width="60dp" android:layout_height="40dp" android:src="@drawable/prev"/>
+        <ImageButton android:id="@+id/bNext" android:layout_width="60dp" android:layout_height="40dp" android:src="@drawable/next"/>
+        <TextView android:layout_gravity="center_vertical" android:id="@+id/tAns" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="@string/sAnsw"/>
+        <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/tAnswer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="  "/>
+        <Button android:textSize="12sp" android:id="@+id/bOK" android:layout_width="50dp" android:layout_height="40dp" android:layout_marginLeft="20dp" android:text="OK"/>
+        <TextView android:layout_gravity="center_vertical" android:id="@+id/tNumTick" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="Билет: "/>
+        <TextView android:textStyle="bold" android:layout_gravity="center_vertical" android:id="@+id/tNumTicket" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="  "/>
+        <ImageButton android:id="@+id/iBuUpBrows" android:layout_width="60dp" android:layout_height="40dp" android:layout_marginLeft="60dp" android:src="@drawable/up"/>
+        <ImageButton android:id="@+id/iBuDownBrows" android:layout_width="60dp" android:layout_height="40dp" android:src="@drawable/down"/>
+    </LinearLayout>
+    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar1" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:layout_marginRight="10dp" android:checked="false" android:text="1" android:layout_toRightOf="@+id/tVoprMain" android:layout_below="@+id/frameLayout2"/>
+    <TextView android:id="@+id/tZap1B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:text="T" android:layout_toRightOf="@+id/tVoprMain" android:layout_below="@+id/chVar1"/>
+    <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <ImageButton android:id="@+id/bVopr" android:layout_width="60dp" android:layout_height="40dp" android:src="@drawable/vopr4"/>
+        <CheckBox android:id="@+id/chTems" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"/>
+        <TextView android:id="@+id/tRez" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sTems"/>
+        <CheckBox android:id="@+id/chTick" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/tNoAns" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sTickets"/>
+        <TextView android:id="@+id/tOtvets" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:text="@string/sOtvets"/>
+        <TextView android:id="@+id/tNOtvets" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="100"/>
+        <TextView android:id="@+id/tErrors" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="@string/sErrors"/>
+        <TextView android:id="@+id/tNErrors" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="100"/>
+        <Button android:textSize="12sp" android:id="@+id/bClear" android:layout_width="50dp" android:layout_height="40dp" android:layout_marginLeft="10dp" android:text="C"/>
+        <Button android:textSize="12sp" android:id="@+id/bStart" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginLeft="40dp" android:text="Выход"/>
+    </LinearLayout>
+    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar2" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="2" android:layout_below="@+id/tZap1B" android:layout_alignLeft="@+id/chVar1"/>
+    <TextView android:id="@+id/tZap2B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:text="T" android:layout_toRightOf="@+id/tVoprMain" android:layout_below="@+id/chVar2"/>
+    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar3" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="3" android:layout_below="@+id/tZap2B" android:layout_alignLeft="@+id/chVar2"/>
+    <TextView android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:id="@+id/tVoprMain" android:scrollbars="vertical" android:layout_width="250dp" android:layout_height="85dp" android:text="  " android:height="50dp" android:layout_below="@+id/frameLayout2" android:layout_alignParentLeft="true"/>
+    <TextView android:id="@+id/tVar1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar1" android:layout_alignBaseline="@+id/chVar1"/>
+    <TextView android:id="@+id/tVar3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar3" android:layout_alignBaseline="@+id/chVar3" android:layout_centerHorizontal="true"/>
+    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar4" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="4" android:layout_toRightOf="@+id/tVar3" android:layout_below="@+id/frameLayout2"/>
+    <TextView android:id="@+id/tZap3B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="T" android:layout_toRightOf="@+id/tVar1" android:layout_below="@+id/chVar4"/>
+    <TextView android:id="@+id/tVar5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar5" android:layout_alignBaseline="@+id/chVar5"/>
+    <TextView android:id="@+id/tVar4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar4" android:layout_alignBaseline="@+id/chVar4"/>
+    <TextView android:id="@+id/tVar6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar6" android:layout_alignBaseline="@+id/chVar6"/>
+    <TextView android:id="@+id/tVar2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar2" android:layout_alignBaseline="@+id/chVar2"/>
+    <ImageView android:id="@+id/vImage" android:layout_width="220dp" android:layout_height="180dp" android:layout_marginTop="10dp" android:scaleType="fitCenter" android:layout_below="@+id/tVoprMain" android:layout_alignParentLeft="true"/>
+</RelativeLayout>
