@@ -14,7 +14,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.p000v4.view.MotionEventCompat;
+//import android.support.p000v4.view.MotionEventCompat;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
@@ -33,6 +33,8 @@ import android.widget.Toast;
 import com.econavt.uniexam.ExamService2;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import androidx.core.view.MotionEventCompat;
 
 public class browser extends Activity {
     public static final String BROADCAST_ACTION = "com.econavt.uniexam";
@@ -134,62 +136,62 @@ public class browser extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(C0051R.layout.browser);
-        this.bClose = (Button) findViewById(C0051R.C0052id.bStart);
-        this.iBuUpBrows = (ImageButton) findViewById(C0051R.C0052id.iBuUpBrows);
-        this.iBuDownBrows = (ImageButton) findViewById(C0051R.C0052id.iBuDownBrows);
-        this.bOK = (Button) findViewById(C0051R.C0052id.bOK);
-        this.bClear = (Button) findViewById(C0051R.C0052id.bClear);
-        this.bVopr = (ImageButton) findViewById(C0051R.C0052id.bVopr);
-        this.bPrev = (ImageButton) findViewById(C0051R.C0052id.bPrev);
-        this.bNext = (ImageButton) findViewById(C0051R.C0052id.bNext);
-        this.spinner1 = (Spinner) findViewById(C0051R.C0052id.spinner1);
-        this.frameLayout1 = (FrameLayout) findViewById(C0051R.C0052id.frameLayout1);
-        this.frameLayout2 = (FrameLayout) findViewById(C0051R.C0052id.frameLayout2);
-        this.linearLayout1 = (LinearLayout) findViewById(C0051R.C0052id.linearLayout1);
-        this.linearLayout2 = (LinearLayout) findViewById(C0051R.C0052id.linearLayout2);
-        this.tVopros = (TextView) findViewById(C0051R.C0052id.tVopros);
-        this.tVariant = (TextView) findViewById(C0051R.C0052id.tVariant);
-        this.tVoprMain = (TextView) findViewById(C0051R.C0052id.tVoprMain);
-        this.tOtvets = (TextView) findViewById(C0051R.C0052id.tOtvets);
-        this.tNOtvets = (TextView) findViewById(C0051R.C0052id.tNOtvets);
-        this.tErrors = (TextView) findViewById(C0051R.C0052id.tErrors);
-        this.tNErrors = (TextView) findViewById(C0051R.C0052id.tNErrors);
-        this.tOtvetYes = (TextView) findViewById(C0051R.C0052id.tOtvetYes);
-        this.tAnswer = (TextView) findViewById(C0051R.C0052id.tAnswer);
-        this.tNumTicket = (TextView) findViewById(C0051R.C0052id.tNumTicket);
-        this.tNumTick = (TextView) findViewById(C0051R.C0052id.tNumTick);
-        this.chVar1 = (CheckBox) findViewById(C0051R.C0052id.chVar1);
-        this.chVar2 = (CheckBox) findViewById(C0051R.C0052id.chVar2);
-        this.chVar3 = (CheckBox) findViewById(C0051R.C0052id.chVar3);
-        this.chVar4 = (CheckBox) findViewById(C0051R.C0052id.chVar4);
-        this.chVar5 = (CheckBox) findViewById(C0051R.C0052id.chVar5);
-        this.chVar6 = (CheckBox) findViewById(C0051R.C0052id.chVar6);
-        this.chTems = (CheckBox) findViewById(C0051R.C0052id.chTems);
-        this.chTick = (CheckBox) findViewById(C0051R.C0052id.chTick);
-        this.vImage = (ImageView) findViewById(C0051R.C0052id.vImage);
-        this.tVar1 = (TextView) findViewById(C0051R.C0052id.tVar1);
-        this.tVar2 = (TextView) findViewById(C0051R.C0052id.tVar2);
-        this.tVar3 = (TextView) findViewById(C0051R.C0052id.tVar3);
-        this.tVar4 = (TextView) findViewById(C0051R.C0052id.tVar4);
-        this.tVar5 = (TextView) findViewById(C0051R.C0052id.tVar5);
-        this.tVar6 = (TextView) findViewById(C0051R.C0052id.tVar6);
-        this.tZap1B = (TextView) findViewById(C0051R.C0052id.tZap1B);
-        this.tZap2B = (TextView) findViewById(C0051R.C0052id.tZap2B);
-        this.tZap3B = (TextView) findViewById(C0051R.C0052id.tZap3B);
-        this.tZap4B = (TextView) findViewById(C0051R.C0052id.tZap4B);
+        setContentView(R.layout.browser);
+        this.bClose = (Button) findViewById(R.id.bStart);
+        this.iBuUpBrows = (ImageButton) findViewById(R.id.iBuUpBrows);
+        this.iBuDownBrows = (ImageButton) findViewById(R.id.iBuDownBrows);
+        this.bOK = (Button) findViewById(R.id.bOK);
+        this.bClear = (Button) findViewById(R.id.bClear);
+        this.bVopr = (ImageButton) findViewById(R.id.bVopr);
+        this.bPrev = (ImageButton) findViewById(R.id.bPrev);
+        this.bNext = (ImageButton) findViewById(R.id.bNext);
+        this.spinner1 = (Spinner) findViewById(R.id.spinner1);
+        this.frameLayout1 = (FrameLayout) findViewById(R.id.frameLayout1);
+        this.frameLayout2 = (FrameLayout) findViewById(R.id.frameLayout2);
+        this.linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
+        this.linearLayout2 = (LinearLayout) findViewById(R.id.linearLayout2);
+        this.tVopros = (TextView) findViewById(R.id.tVopros);
+        this.tVariant = (TextView) findViewById(R.id.tVariant);
+        this.tVoprMain = (TextView) findViewById(R.id.tVoprMain);
+        this.tOtvets = (TextView) findViewById(R.id.tOtvets);
+        this.tNOtvets = (TextView) findViewById(R.id.tNOtvets);
+        this.tErrors = (TextView) findViewById(R.id.tErrors);
+        this.tNErrors = (TextView) findViewById(R.id.tNErrors);
+        this.tOtvetYes = (TextView) findViewById(R.id.tOtvetYes);
+        this.tAnswer = (TextView) findViewById(R.id.tAnswer);
+        this.tNumTicket = (TextView) findViewById(R.id.tNumTicket);
+        this.tNumTick = (TextView) findViewById(R.id.tNumTick);
+        this.chVar1 = (CheckBox) findViewById(R.id.chVar1);
+        this.chVar2 = (CheckBox) findViewById(R.id.chVar2);
+        this.chVar3 = (CheckBox) findViewById(R.id.chVar3);
+        this.chVar4 = (CheckBox) findViewById(R.id.chVar4);
+        this.chVar5 = (CheckBox) findViewById(R.id.chVar5);
+        this.chVar6 = (CheckBox) findViewById(R.id.chVar6);
+        this.chTems = (CheckBox) findViewById(R.id.chTems);
+        this.chTick = (CheckBox) findViewById(R.id.chTick);
+        this.vImage = (ImageView) findViewById(R.id.vImage);
+        this.tVar1 = (TextView) findViewById(R.id.tVar1);
+        this.tVar2 = (TextView) findViewById(R.id.tVar2);
+        this.tVar3 = (TextView) findViewById(R.id.tVar3);
+        this.tVar4 = (TextView) findViewById(R.id.tVar4);
+        this.tVar5 = (TextView) findViewById(R.id.tVar5);
+        this.tVar6 = (TextView) findViewById(R.id.tVar6);
+        this.tZap1B = (TextView) findViewById(R.id.tZap1B);
+        this.tZap2B = (TextView) findViewById(R.id.tZap2B);
+        this.tZap3B = (TextView) findViewById(R.id.tZap3B);
+        this.tZap4B = (TextView) findViewById(R.id.tZap4B);
         View.OnClickListener oclBtn = new View.OnClickListener() {
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case C0051R.C0052id.tVoprMain:
+                    case R.id.tVoprMain:
                         browser.this.NUM = 7;
                         browser.this.setNum();
                         return;
-                    case C0051R.C0052id.bStart:
+                    case R.id.bStart:
                         browser.this.myService2.doSend("B" + browser.this.WORK_NUM + "," + "1,0,0,1");
                         browser.this.finish();
                         return;
-                    case C0051R.C0052id.chVar5:
+                    case R.id.chVar5:
                         if (browser.this.chVar5.isChecked()) {
                             browser.this.onClickCheck(5);
                             return;
@@ -197,7 +199,7 @@ public class browser extends Activity {
                             browser.this.chVar5.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chVar4:
+                    case R.id.chVar4:
                         if (browser.this.chVar4.isChecked()) {
                             browser.this.onClickCheck(4);
                             return;
@@ -205,7 +207,7 @@ public class browser extends Activity {
                             browser.this.chVar4.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chVar6:
+                    case R.id.chVar6:
                         if (browser.this.chVar6.isChecked()) {
                             browser.this.onClickCheck(6);
                             return;
@@ -213,7 +215,7 @@ public class browser extends Activity {
                             browser.this.chVar6.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.bPrev:
+                    case R.id.bPrev:
                         browser.this.Set_Im = true;
                         if (browser.this.TIP_EX == "1") {
                             if (browser.this.TEK_VOPR_IN_TEMA != 0) {
@@ -234,7 +236,7 @@ public class browser extends Activity {
                         }
                         browser.this.setNomVopros();
                         return;
-                    case C0051R.C0052id.bNext:
+                    case R.id.bNext:
                         browser.this.Set_Im = true;
                         if (browser.this.TIP_EX == "1") {
                             if (browser.this.TEK_VOPR_IN_TEMA != browser.this.KOL_VOPR_IN_TEMA - 1) {
@@ -252,16 +254,16 @@ public class browser extends Activity {
                         }
                         browser.this.setNomVopros();
                         return;
-                    case C0051R.C0052id.bOK:
+                    case R.id.bOK:
                         browser.this.setOK();
                         return;
-                    case C0051R.C0052id.iBuUpBrows:
+                    case R.id.iBuUpBrows:
                         browser.this.scroll(10);
                         return;
-                    case C0051R.C0052id.iBuDownBrows:
+                    case R.id.iBuDownBrows:
                         browser.this.scroll(-10);
                         return;
-                    case C0051R.C0052id.chVar1:
+                    case R.id.chVar1:
                         if (browser.this.chVar1.isChecked()) {
                             browser.this.onClickCheck(1);
                             return;
@@ -269,13 +271,13 @@ public class browser extends Activity {
                             browser.this.chVar1.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.bVopr:
+                    case R.id.bVopr:
                         if (browser.this.HELP_YES) {
                             browser.this.setPodskazka();
                             return;
                         }
                         return;
-                    case C0051R.C0052id.chTems:
+                    case R.id.chTems:
                         if (browser.this.chTems.isChecked()) {
                             browser.this.onClickCheck(7);
                             return;
@@ -283,7 +285,7 @@ public class browser extends Activity {
                             browser.this.chTems.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chTick:
+                    case R.id.chTick:
                         if (browser.this.chTick.isChecked()) {
                             browser.this.onClickCheck(8);
                             return;
@@ -291,10 +293,10 @@ public class browser extends Activity {
                             browser.this.chTick.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.bClear:
+                    case R.id.bClear:
                         browser.this.ErrClear();
                         return;
-                    case C0051R.C0052id.chVar2:
+                    case R.id.chVar2:
                         if (browser.this.chVar2.isChecked()) {
                             browser.this.onClickCheck(2);
                             return;
@@ -302,7 +304,7 @@ public class browser extends Activity {
                             browser.this.chVar2.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chVar3:
+                    case R.id.chVar3:
                         if (browser.this.chVar3.isChecked()) {
                             browser.this.onClickCheck(3);
                             return;
@@ -310,31 +312,31 @@ public class browser extends Activity {
                             browser.this.chVar3.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.tVar1:
+                    case R.id.tVar1:
                         browser.this.NUM = 1;
                         browser.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar3:
+                    case R.id.tVar3:
                         browser.this.NUM = 3;
                         browser.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar5:
+                    case R.id.tVar5:
                         browser.this.NUM = 5;
                         browser.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar4:
+                    case R.id.tVar4:
                         browser.this.NUM = 4;
                         browser.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar6:
+                    case R.id.tVar6:
                         browser.this.NUM = 6;
                         browser.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar2:
+                    case R.id.tVar2:
                         browser.this.NUM = 2;
                         browser.this.setNum();
                         return;
-                    case C0051R.C0052id.vImage:
+                    case R.id.vImage:
                         browser.this.click_im();
                         return;
                     default:

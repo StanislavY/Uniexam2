@@ -34,23 +34,23 @@ public class sett2 extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(C0051R.layout.sett2);
-        this.w_num = (EditText) findViewById(C0051R.C0052id.w_num);
-        this.w_adr = (EditText) findViewById(C0051R.C0052id.w_adr);
-        this.w_port = (EditText) findViewById(C0051R.C0052id.w_port);
-        this.for_pauza_t = (EditText) findViewById(C0051R.C0052id.for_pauza_t);
-        this.im_height = (EditText) findViewById(C0051R.C0052id.im_height);
-        this.tFontSize = (EditText) findViewById(C0051R.C0052id.tFontSize);
-        this.w_OK_Sett2 = (Button) findViewById(C0051R.C0052id.w_OK_Sett2);
-        this.w_Prev = (Button) findViewById(C0051R.C0052id.w_Prev);
-        this.chVar2Sett2 = (CheckBox) findViewById(C0051R.C0052id.chVar2Sett2);
+        setContentView(R.layout.sett2);
+        this.w_num = (EditText) findViewById(R.id.w_num);
+        this.w_adr = (EditText) findViewById(R.id.w_adr);
+        this.w_port = (EditText) findViewById(R.id.w_port);
+        this.for_pauza_t = (EditText) findViewById(R.id.for_pauza_t);
+        this.im_height = (EditText) findViewById(R.id.im_height);
+        this.tFontSize = (EditText) findViewById(R.id.tFontSize);
+        this.w_OK_Sett2 = (Button) findViewById(R.id.w_OK_Sett2);
+        this.w_Prev = (Button) findViewById(R.id.w_Prev);
+        this.chVar2Sett2 = (CheckBox) findViewById(R.id.chVar2Sett2);
         View.OnClickListener oclBtn = new View.OnClickListener() {
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case C0051R.C0052id.w_Prev:
+                    case R.id.w_Prev:
                         sett2.this.onClickPrev2();
                         return;
-                    case C0051R.C0052id.w_OK_Sett2:
+                    case R.id.w_OK_Sett2:
                         sett2.this.onClickSet();
                         return;
                     default:
@@ -75,7 +75,7 @@ public class sett2 extends Activity {
         this.tFontSize.setTextSize((float) this.WORK_HEIGTH);
         this.im_height.setTextSize((float) this.WORK_HEIGTH);
         if (this.M_SOUND) {
-            MediaPlayer.create(this, C0051R.raw.f8s2).start();
+            MediaPlayer.create(this, R.raw.s2).start();
         }
         this.w_num.setText(this.WORK_NUM);
         this.w_adr.setText(this.SERVER_ADR);

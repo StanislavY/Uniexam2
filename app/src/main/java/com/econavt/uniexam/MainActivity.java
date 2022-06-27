@@ -57,34 +57,34 @@ public class MainActivity extends Activity {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(C0051R.layout.activity_main);
-        this.bL_Data = (Button) findViewById(C0051R.C0052id.bL_Data);
-        this.bSet = (Button) findViewById(C0051R.C0052id.bSet);
-        this.bHelp = (Button) findViewById(C0051R.C0052id.bHelp);
-        this.bStart = (Button) findViewById(C0051R.C0052id.bStart);
-        this.bExit = (Button) findViewById(C0051R.C0052id.bExit);
-        this.tName = (TextView) findViewById(C0051R.C0052id.tName);
-        this.tN_Ticket = (TextView) findViewById(C0051R.C0052id.tN_Ticket);
-        this.tN_Vopr = (TextView) findViewById(C0051R.C0052id.tN_Vopr);
-        this.tN_Tem = (TextView) findViewById(C0051R.C0052id.tN_Tem);
-        this.LLBut3 = (LinearLayout) findViewById(C0051R.C0052id.LLBut3);
+        setContentView(R.layout.activity_main);
+        this.bL_Data = (Button) findViewById(R.id.bL_Data);
+        this.bSet = (Button) findViewById(R.id.bSet);
+        this.bHelp = (Button) findViewById(R.id.bHelp);
+        this.bStart = (Button) findViewById(R.id.bStart);
+        this.bExit = (Button) findViewById(R.id.bExit);
+        this.tName = (TextView) findViewById(R.id.tName);
+        this.tN_Ticket = (TextView) findViewById(R.id.tN_Ticket);
+        this.tN_Vopr = (TextView) findViewById(R.id.tN_Vopr);
+        this.tN_Tem = (TextView) findViewById(R.id.tN_Tem);
+        this.LLBut3 = (LinearLayout) findViewById(R.id.LLBut3);
         this.STARTING = false;
         View.OnClickListener oclBtn = new View.OnClickListener() {
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case C0051R.C0052id.bL_Data:
+                    case R.id.bL_Data:
                         MainActivity.this.Sett_1();
                         return;
-                    case C0051R.C0052id.bSet:
+                    case R.id.bSet:
                         MainActivity.this.Sett_2();
                         return;
-                    case C0051R.C0052id.bHelp:
+                    case R.id.bHelp:
                         MainActivity.this.Browse(4);
                         return;
-                    case C0051R.C0052id.bStart:
+                    case R.id.bStart:
                         MainActivity.this.StartStop();
                         return;
-                    case C0051R.C0052id.bExit:
+                    case R.id.bExit:
                         Process.killProcess(Process.myPid());
                         return;
                     default:

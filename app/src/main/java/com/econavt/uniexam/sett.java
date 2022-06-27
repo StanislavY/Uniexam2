@@ -21,17 +21,17 @@ public class sett extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(C0051R.layout.sett);
-        this.w_nam = (EditText) findViewById(C0051R.C0052id.w_nam);
-        this.w_OK_Sett = (Button) findViewById(C0051R.C0052id.w_OK_Sett);
-        this.bPrev1 = (Button) findViewById(C0051R.C0052id.bPrev1);
+        setContentView(R.layout.sett);
+        this.w_nam = (EditText) findViewById(R.id.w_nam);
+        this.w_OK_Sett = (Button) findViewById(R.id.w_OK_Sett);
+        this.bPrev1 = (Button) findViewById(R.id.bPrev1);
         View.OnClickListener oclBtn = new View.OnClickListener() {
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case C0051R.C0052id.bPrev1:
+                    case R.id.bPrev1:
                         sett.this.finish();
                         return;
-                    case C0051R.C0052id.w_OK_Sett:
+                    case R.id.w_OK_Sett:
                         sett.this.onClickSet();
                         return;
                     default:
@@ -50,7 +50,7 @@ public class sett extends Activity {
         this.w_OK_Sett.setTextSize((float) this.WORK_HEIGTH);
         this.w_nam.setTextSize((float) this.WORK_HEIGTH);
         if (M_SOUND) {
-            MediaPlayer.create(this, C0051R.raw.f8s2).start();
+            MediaPlayer.create(this, R.raw.s2).start();
         }
         this.w_nam.setText(this.WORK_NAME);
     }

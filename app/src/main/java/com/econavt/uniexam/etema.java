@@ -15,7 +15,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.p000v4.view.MotionEventCompat;
+//import android.support.p000v4.view.MotionEventCompat;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
@@ -31,6 +31,8 @@ import android.widget.Toast;
 import com.econavt.uniexam.ExamService2;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import androidx.core.view.MotionEventCompat;
 
 public class etema extends Activity {
     public static final String BROADCAST_ACTION = "com.econavt.uniexam";
@@ -164,53 +166,53 @@ public class etema extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(C0051R.layout.etema);
-        this.bCloseTem = (Button) findViewById(C0051R.C0052id.bCloseTem);
-        this.iBuUpTem = (ImageButton) findViewById(C0051R.C0052id.iBuUpTem);
-        this.iBuDownTem = (ImageButton) findViewById(C0051R.C0052id.iBuDownTem);
-        this.bOKTem = (Button) findViewById(C0051R.C0052id.bOKTem);
-        this.bVoprTem = (ImageButton) findViewById(C0051R.C0052id.bVoprTem);
-        this.bPrevTem = (ImageButton) findViewById(C0051R.C0052id.bPrevTem);
-        this.bNextTem = (ImageButton) findViewById(C0051R.C0052id.bNextTem);
-        this.frameLayout1Tem = (FrameLayout) findViewById(C0051R.C0052id.frameLayout1Tem);
-        this.frameLayout2Tem = (FrameLayout) findViewById(C0051R.C0052id.frameLayout2Tem);
-        this.linearLayout1Tem = (LinearLayout) findViewById(C0051R.C0052id.linearLayout1Tem);
-        this.linearLayout2Tem = (LinearLayout) findViewById(C0051R.C0052id.linearLayout2Tem);
-        this.tTema = (TextView) findViewById(C0051R.C0052id.tTema);
-        this.tTimeTicTem = (TextView) findViewById(C0051R.C0052id.tTimeTicTem);
-        this.tVoprosTem = (TextView) findViewById(C0051R.C0052id.tVoprosTem);
-        this.tVariantTem = (TextView) findViewById(C0051R.C0052id.tVariantTem);
-        this.tVoprMainTem = (TextView) findViewById(C0051R.C0052id.tVoprMainTem);
-        this.tOtvetsTem = (TextView) findViewById(C0051R.C0052id.tOtvetsTem);
-        this.tNOtvetsTem = (TextView) findViewById(C0051R.C0052id.tNOtvetsTem);
-        this.tErrorsTem = (TextView) findViewById(C0051R.C0052id.tErrorsTem);
-        this.tNErrorsTem = (TextView) findViewById(C0051R.C0052id.tNErrorsTem);
-        this.tOtvetYesTem = (TextView) findViewById(C0051R.C0052id.tOtvetYesTem);
-        this.tAnswerTem = (TextView) findViewById(C0051R.C0052id.tAnswerTem);
-        this.tResult = (TextView) findViewById(C0051R.C0052id.tResult);
-        this.tOcenka = (TextView) findViewById(C0051R.C0052id.tOcenka);
-        this.tNoAns = (TextView) findViewById(C0051R.C0052id.tNoAns);
-        this.chVar1Tem = (CheckBox) findViewById(C0051R.C0052id.chVar1Tem);
-        this.chVar2Tem = (CheckBox) findViewById(C0051R.C0052id.chVar2Tem);
-        this.chVar3Tem = (CheckBox) findViewById(C0051R.C0052id.chVar3Tem);
-        this.chVar4Tem = (CheckBox) findViewById(C0051R.C0052id.chVar4Tem);
-        this.chVar5Tem = (CheckBox) findViewById(C0051R.C0052id.chVar5Tem);
-        this.chVar6Tem = (CheckBox) findViewById(C0051R.C0052id.chVar6Tem);
-        this.vImageTem = (ImageView) findViewById(C0051R.C0052id.vImageTem);
-        this.tVar1Tem = (TextView) findViewById(C0051R.C0052id.tVar1Tem);
-        this.tVar2Tem = (TextView) findViewById(C0051R.C0052id.tVar2Tem);
-        this.tVar3Tem = (TextView) findViewById(C0051R.C0052id.tVar3Tem);
-        this.tVar4Tem = (TextView) findViewById(C0051R.C0052id.tVar4Tem);
-        this.tVar5Tem = (TextView) findViewById(C0051R.C0052id.tVar5Tem);
-        this.tVar6Tem = (TextView) findViewById(C0051R.C0052id.tVar6Tem);
-        this.tZap1T = (TextView) findViewById(C0051R.C0052id.tZap1T);
-        this.tZap2T = (TextView) findViewById(C0051R.C0052id.tZap2T);
-        this.tZap3T = (TextView) findViewById(C0051R.C0052id.tZap3T);
-        this.tZap4T = (TextView) findViewById(C0051R.C0052id.tZap4T);
+        setContentView(R.layout.etema);
+        this.bCloseTem = (Button) findViewById(R.id.bCloseTem);
+        this.iBuUpTem = (ImageButton) findViewById(R.id.iBuUpTem);
+        this.iBuDownTem = (ImageButton) findViewById(R.id.iBuDownTem);
+        this.bOKTem = (Button) findViewById(R.id.bOKTem);
+        this.bVoprTem = (ImageButton) findViewById(R.id.bVoprTem);
+        this.bPrevTem = (ImageButton) findViewById(R.id.bPrevTem);
+        this.bNextTem = (ImageButton) findViewById(R.id.bNextTem);
+        this.frameLayout1Tem = (FrameLayout) findViewById(R.id.frameLayout1Tem);
+        this.frameLayout2Tem = (FrameLayout) findViewById(R.id.frameLayout2Tem);
+        this.linearLayout1Tem = (LinearLayout) findViewById(R.id.linearLayout1Tem);
+        this.linearLayout2Tem = (LinearLayout) findViewById(R.id.linearLayout2Tem);
+        this.tTema = (TextView) findViewById(R.id.tTema);
+        this.tTimeTicTem = (TextView) findViewById(R.id.tTimeTicTem);
+        this.tVoprosTem = (TextView) findViewById(R.id.tVoprosTem);
+        this.tVariantTem = (TextView) findViewById(R.id.tVariantTem);
+        this.tVoprMainTem = (TextView) findViewById(R.id.tVoprMainTem);
+        this.tOtvetsTem = (TextView) findViewById(R.id.tOtvetsTem);
+        this.tNOtvetsTem = (TextView) findViewById(R.id.tNOtvetsTem);
+        this.tErrorsTem = (TextView) findViewById(R.id.tErrorsTem);
+        this.tNErrorsTem = (TextView) findViewById(R.id.tNErrorsTem);
+        this.tOtvetYesTem = (TextView) findViewById(R.id.tOtvetYesTem);
+        this.tAnswerTem = (TextView) findViewById(R.id.tAnswerTem);
+        this.tResult = (TextView) findViewById(R.id.tResult);
+        this.tOcenka = (TextView) findViewById(R.id.tOcenka);
+        this.tNoAns = (TextView) findViewById(R.id.tNoAns);
+        this.chVar1Tem = (CheckBox) findViewById(R.id.chVar1Tem);
+        this.chVar2Tem = (CheckBox) findViewById(R.id.chVar2Tem);
+        this.chVar3Tem = (CheckBox) findViewById(R.id.chVar3Tem);
+        this.chVar4Tem = (CheckBox) findViewById(R.id.chVar4Tem);
+        this.chVar5Tem = (CheckBox) findViewById(R.id.chVar5Tem);
+        this.chVar6Tem = (CheckBox) findViewById(R.id.chVar6Tem);
+        this.vImageTem = (ImageView) findViewById(R.id.vImageTem);
+        this.tVar1Tem = (TextView) findViewById(R.id.tVar1Tem);
+        this.tVar2Tem = (TextView) findViewById(R.id.tVar2Tem);
+        this.tVar3Tem = (TextView) findViewById(R.id.tVar3Tem);
+        this.tVar4Tem = (TextView) findViewById(R.id.tVar4Tem);
+        this.tVar5Tem = (TextView) findViewById(R.id.tVar5Tem);
+        this.tVar6Tem = (TextView) findViewById(R.id.tVar6Tem);
+        this.tZap1T = (TextView) findViewById(R.id.tZap1T);
+        this.tZap2T = (TextView) findViewById(R.id.tZap2T);
+        this.tZap3T = (TextView) findViewById(R.id.tZap3T);
+        this.tZap4T = (TextView) findViewById(R.id.tZap4T);
         View.OnClickListener oclBtn = new View.OnClickListener() {
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case C0051R.C0052id.chVar5Tem:
+                    case R.id.chVar5Tem:
                         if (etema.this.chVar5Tem.isChecked()) {
                             etema.this.onClickCheck(5);
                             return;
@@ -218,7 +220,7 @@ public class etema extends Activity {
                             etema.this.chVar5Tem.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chVar4Tem:
+                    case R.id.chVar4Tem:
                         if (etema.this.chVar4Tem.isChecked()) {
                             etema.this.onClickCheck(4);
                             return;
@@ -226,7 +228,7 @@ public class etema extends Activity {
                             etema.this.chVar4Tem.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chVar6Tem:
+                    case R.id.chVar6Tem:
                         if (etema.this.chVar6Tem.isChecked()) {
                             etema.this.onClickCheck(6);
                             return;
@@ -234,7 +236,7 @@ public class etema extends Activity {
                             etema.this.chVar6Tem.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.bPrevTem:
+                    case R.id.bPrevTem:
                         etema.this.Set_ImTem = true;
                         if (etema.this.INI_SELECT_QST && etema.this.NOMVOPR != 1) {
                             etema etema = etema.this;
@@ -245,7 +247,7 @@ public class etema extends Activity {
                             return;
                         }
                         return;
-                    case C0051R.C0052id.bNextTem:
+                    case R.id.bNextTem:
                         etema.this.Set_ImTem = true;
                         if (etema.this.INI_SELECT_QST && etema.this.NOMVOPR != etema.this.MAXVOPR) {
                             etema.this.NOMVOPR++;
@@ -254,13 +256,13 @@ public class etema extends Activity {
                             return;
                         }
                         return;
-                    case C0051R.C0052id.iBuUpTem:
+                    case R.id.iBuUpTem:
                         etema.this.scroll(10);
                         return;
-                    case C0051R.C0052id.iBuDownTem:
+                    case R.id.iBuDownTem:
                         etema.this.scroll(-10);
                         return;
-                    case C0051R.C0052id.chVar1Tem:
+                    case R.id.chVar1Tem:
                         if (etema.this.chVar1Tem.isChecked()) {
                             etema.this.onClickCheck(1);
                             return;
@@ -268,20 +270,20 @@ public class etema extends Activity {
                             etema.this.chVar1Tem.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.tVoprMainTem:
+                    case R.id.tVoprMainTem:
                         etema.this.NUM = 7;
                         etema.this.setNum();
                         return;
-                    case C0051R.C0052id.bVoprTem:
+                    case R.id.bVoprTem:
                         if (etema.this.HELP_YES) {
                             etema.this.setPodskazka();
                             return;
                         }
                         return;
-                    case C0051R.C0052id.bOKTem:
+                    case R.id.bOKTem:
                         etema.this.setOK();
                         return;
-                    case C0051R.C0052id.bCloseTem:
+                    case R.id.bCloseTem:
                         if (etema.this.BROWSER_ERR) {
                             etema.this.NOMVOPR = 1;
                             etema.this.myService3.doSend("RN" + etema.this.WORK_NUM + "," + Integer.toString(etema.this.MASS_N_ERR_QST[etema.this.NOMVOPR - 1]));
@@ -293,7 +295,7 @@ public class etema extends Activity {
                         etema.this.EXAMEN_BREAK_ON_ERR = true;
                         etema.this.finish();
                         return;
-                    case C0051R.C0052id.chVar2Tem:
+                    case R.id.chVar2Tem:
                         if (etema.this.chVar2Tem.isChecked()) {
                             etema.this.onClickCheck(2);
                             return;
@@ -301,7 +303,7 @@ public class etema extends Activity {
                             etema.this.chVar2Tem.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chVar3Tem:
+                    case R.id.chVar3Tem:
                         if (etema.this.chVar3Tem.isChecked()) {
                             etema.this.onClickCheck(3);
                             return;
@@ -309,30 +311,30 @@ public class etema extends Activity {
                             etema.this.chVar3Tem.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.vImageTem:
+                    case R.id.vImageTem:
                         etema.this.click_im();
                         return;
-                    case C0051R.C0052id.tVar1Tem:
+                    case R.id.tVar1Tem:
                         etema.this.NUM = 1;
                         etema.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar3Tem:
+                    case R.id.tVar3Tem:
                         etema.this.NUM = 3;
                         etema.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar5Tem:
+                    case R.id.tVar5Tem:
                         etema.this.NUM = 5;
                         etema.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar4Tem:
+                    case R.id.tVar4Tem:
                         etema.this.NUM = 4;
                         etema.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar6Tem:
+                    case R.id.tVar6Tem:
                         etema.this.NUM = 6;
                         etema.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar2Tem:
+                    case R.id.tVar2Tem:
                         etema.this.NUM = 2;
                         etema.this.setNum();
                         return;
@@ -906,7 +908,7 @@ public class etema extends Activity {
             this.tResult.setTextColor(this.redColor);
             this.tResult.setText("Не сдан");
             if (this.M_SOUND) {
-                MediaPlayer.create(this, C0051R.raw.f9s5).start();
+                MediaPlayer.create(this, R.raw.s5).start();
             }
             this.EXAMEN_BREAK_ON_ERR = true;
         }
@@ -914,7 +916,7 @@ public class etema extends Activity {
             this.tResult.setTextColor(this.GreenText);
             this.tResult.setText("Сдан");
             if (this.M_SOUND) {
-                MediaPlayer.create(this, C0051R.raw.tada).start();
+                MediaPlayer.create(this, R.raw.tada).start();
             }
         }
         set_ocenka();

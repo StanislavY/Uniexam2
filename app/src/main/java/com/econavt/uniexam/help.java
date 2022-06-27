@@ -12,14 +12,14 @@ public class help extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(C0051R.layout.help);
-        this.iRet = (ImageButton) findViewById(C0051R.C0052id.iRet);
-        this.webView1 = (WebView) findViewById(C0051R.C0052id.webView1);
+        setContentView(R.layout.help);
+        this.iRet = (ImageButton) findViewById(R.id.iRet);
+        this.webView1 = (WebView) findViewById(R.id.webView1);
         this.webView1.getSettings().setBuiltInZoomControls(true);
         this.iRet.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case C0051R.C0052id.iRet:
+                    case R.id.iRet:
                         help.this.finish();
                         return;
                     default:

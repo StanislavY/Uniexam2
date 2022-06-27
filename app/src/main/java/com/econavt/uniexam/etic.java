@@ -15,7 +15,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.p000v4.view.MotionEventCompat;
+//import android.support.p000v4.view.MotionEventCompat;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
@@ -32,6 +32,8 @@ import android.widget.Toast;
 import com.econavt.uniexam.ExamService2;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import androidx.core.view.MotionEventCompat;
 
 public class etic extends Activity {
     public static final String BROADCAST_ACTION = "com.econavt.uniexam";
@@ -153,52 +155,52 @@ public class etic extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(C0051R.layout.etic);
-        this.bCloseTic = (Button) findViewById(C0051R.C0052id.bCloseTic);
-        this.iBuUpBrowsTic = (ImageButton) findViewById(C0051R.C0052id.iBuUpBrowsTic);
-        this.iBuDownBrowsTic = (ImageButton) findViewById(C0051R.C0052id.iBuDownBrowsTic);
-        this.bOKTic = (Button) findViewById(C0051R.C0052id.bOKTic);
-        this.bVoprTic = (ImageButton) findViewById(C0051R.C0052id.bVoprTic);
-        this.bPrevTic = (ImageButton) findViewById(C0051R.C0052id.bPrevTic);
-        this.bNextTic = (ImageButton) findViewById(C0051R.C0052id.bNextTic);
-        this.frameLayout2Tic = (FrameLayout) findViewById(C0051R.C0052id.frameLayout2Tic);
-        this.linearLayout1Tic = (LinearLayout) findViewById(C0051R.C0052id.linearLayout1Tic);
-        this.linearLayout2Tic = (LinearLayout) findViewById(C0051R.C0052id.linearLayout2Tic);
-        this.tVoprosTic = (TextView) findViewById(C0051R.C0052id.tVoprosTic);
-        this.tVariantTic = (TextView) findViewById(C0051R.C0052id.tVariantTic);
-        this.tVoprMainTic = (TextView) findViewById(C0051R.C0052id.tVoprMainTic);
-        this.tOtvetsTic = (TextView) findViewById(C0051R.C0052id.tOtvetsTic);
-        this.tNOtvetsTic = (TextView) findViewById(C0051R.C0052id.tNOtvetsTic);
-        this.tErrorsTic = (TextView) findViewById(C0051R.C0052id.tErrorsTic);
-        this.tNErrorsTic = (TextView) findViewById(C0051R.C0052id.tNErrorsTic);
-        this.tOtvetYesTic = (TextView) findViewById(C0051R.C0052id.tOtvetYesTic);
-        this.tNomerTicket = (TextView) findViewById(C0051R.C0052id.tNomerTicket);
-        this.tAnswerTic = (TextView) findViewById(C0051R.C0052id.tAnswerTic);
-        this.tNoAns = (TextView) findViewById(C0051R.C0052id.tNoAns);
-        this.chVar1Tic = (CheckBox) findViewById(C0051R.C0052id.chVar1Tic);
-        this.chVar2Tic = (CheckBox) findViewById(C0051R.C0052id.chVar2Tic);
-        this.chVar3Tic = (CheckBox) findViewById(C0051R.C0052id.chVar3Tic);
-        this.chVar4Tic = (CheckBox) findViewById(C0051R.C0052id.chVar4Tic);
-        this.chVar5Tic = (CheckBox) findViewById(C0051R.C0052id.chVar5Tic);
-        this.chVar6Tic = (CheckBox) findViewById(C0051R.C0052id.chVar6Tic);
-        this.vImageTic = (ImageView) findViewById(C0051R.C0052id.vImageTic);
-        this.tVar1Tic = (TextView) findViewById(C0051R.C0052id.tVar1Tic);
-        this.tVar2Tic = (TextView) findViewById(C0051R.C0052id.tVar2Tic);
-        this.tVar3Tic = (TextView) findViewById(C0051R.C0052id.tVar3Tic);
-        this.tVar4Tic = (TextView) findViewById(C0051R.C0052id.tVar4Tic);
-        this.tVar5Tic = (TextView) findViewById(C0051R.C0052id.tVar5Tic);
-        this.tVar6Tic = (TextView) findViewById(C0051R.C0052id.tVar6Tic);
-        this.tTimeTic = (TextView) findViewById(C0051R.C0052id.tTimeTic);
-        this.tResult = (TextView) findViewById(C0051R.C0052id.tResult);
-        this.tOcenka = (TextView) findViewById(C0051R.C0052id.tOcenka);
-        this.tZap1 = (TextView) findViewById(C0051R.C0052id.tZap1);
-        this.tZap2 = (TextView) findViewById(C0051R.C0052id.tZap2);
-        this.tZap3 = (TextView) findViewById(C0051R.C0052id.tZap3);
-        this.tZap4 = (TextView) findViewById(C0051R.C0052id.tZap4);
+        setContentView(R.layout.etic);
+        this.bCloseTic = (Button) findViewById(R.id.bCloseTic);
+        this.iBuUpBrowsTic = (ImageButton) findViewById(R.id.iBuUpBrowsTic);
+        this.iBuDownBrowsTic = (ImageButton) findViewById(R.id.iBuDownBrowsTic);
+        this.bOKTic = (Button) findViewById(R.id.bOKTic);
+        this.bVoprTic = (ImageButton) findViewById(R.id.bVoprTic);
+        this.bPrevTic = (ImageButton) findViewById(R.id.bPrevTic);
+        this.bNextTic = (ImageButton) findViewById(R.id.bNextTic);
+        this.frameLayout2Tic = (FrameLayout) findViewById(R.id.frameLayout2Tic);
+        this.linearLayout1Tic = (LinearLayout) findViewById(R.id.linearLayout1Tic);
+        this.linearLayout2Tic = (LinearLayout) findViewById(R.id.linearLayout2Tic);
+        this.tVoprosTic = (TextView) findViewById(R.id.tVoprosTic);
+        this.tVariantTic = (TextView) findViewById(R.id.tVariantTic);
+        this.tVoprMainTic = (TextView) findViewById(R.id.tVoprMainTic);
+        this.tOtvetsTic = (TextView) findViewById(R.id.tOtvetsTic);
+        this.tNOtvetsTic = (TextView) findViewById(R.id.tNOtvetsTic);
+        this.tErrorsTic = (TextView) findViewById(R.id.tErrorsTic);
+        this.tNErrorsTic = (TextView) findViewById(R.id.tNErrorsTic);
+        this.tOtvetYesTic = (TextView) findViewById(R.id.tOtvetYesTic);
+        this.tNomerTicket = (TextView) findViewById(R.id.tNomerTicket);
+        this.tAnswerTic = (TextView) findViewById(R.id.tAnswerTic);
+        this.tNoAns = (TextView) findViewById(R.id.tNoAns);
+        this.chVar1Tic = (CheckBox) findViewById(R.id.chVar1Tic);
+        this.chVar2Tic = (CheckBox) findViewById(R.id.chVar2Tic);
+        this.chVar3Tic = (CheckBox) findViewById(R.id.chVar3Tic);
+        this.chVar4Tic = (CheckBox) findViewById(R.id.chVar4Tic);
+        this.chVar5Tic = (CheckBox) findViewById(R.id.chVar5Tic);
+        this.chVar6Tic = (CheckBox) findViewById(R.id.chVar6Tic);
+        this.vImageTic = (ImageView) findViewById(R.id.vImageTic);
+        this.tVar1Tic = (TextView) findViewById(R.id.tVar1Tic);
+        this.tVar2Tic = (TextView) findViewById(R.id.tVar2Tic);
+        this.tVar3Tic = (TextView) findViewById(R.id.tVar3Tic);
+        this.tVar4Tic = (TextView) findViewById(R.id.tVar4Tic);
+        this.tVar5Tic = (TextView) findViewById(R.id.tVar5Tic);
+        this.tVar6Tic = (TextView) findViewById(R.id.tVar6Tic);
+        this.tTimeTic = (TextView) findViewById(R.id.tTimeTic);
+        this.tResult = (TextView) findViewById(R.id.tResult);
+        this.tOcenka = (TextView) findViewById(R.id.tOcenka);
+        this.tZap1 = (TextView) findViewById(R.id.tZap1);
+        this.tZap2 = (TextView) findViewById(R.id.tZap2);
+        this.tZap3 = (TextView) findViewById(R.id.tZap3);
+        this.tZap4 = (TextView) findViewById(R.id.tZap4);
         View.OnClickListener oclBtn2 = new View.OnClickListener() {
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case C0051R.C0052id.chVar5Tic:
+                    case R.id.chVar5Tic:
                         if (etic.this.chVar5Tic.isChecked()) {
                             etic.this.onClickCheck(5);
                             return;
@@ -206,7 +208,7 @@ public class etic extends Activity {
                             etic.this.chVar5Tic.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chVar4Tic:
+                    case R.id.chVar4Tic:
                         if (etic.this.chVar4Tic.isChecked()) {
                             etic.this.onClickCheck(4);
                             return;
@@ -214,7 +216,7 @@ public class etic extends Activity {
                             etic.this.chVar4Tic.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chVar2Tic:
+                    case R.id.chVar2Tic:
                         if (etic.this.chVar2Tic.isChecked()) {
                             etic.this.onClickCheck(2);
                             return;
@@ -222,7 +224,7 @@ public class etic extends Activity {
                             etic.this.chVar2Tic.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.chVar6Tic:
+                    case R.id.chVar6Tic:
                         if (etic.this.chVar6Tic.isChecked()) {
                             etic.this.onClickCheck(6);
                             return;
@@ -230,11 +232,11 @@ public class etic extends Activity {
                             etic.this.chVar6Tic.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.tVoprMainTic:
+                    case R.id.tVoprMainTic:
                         etic.this.NUM = 7;
                         etic.this.setNum();
                         return;
-                    case C0051R.C0052id.bPrevTic:
+                    case R.id.bPrevTic:
                         etic.this.Set_ImTic = true;
                         if (etic.this.INI_SELECT_QST && etic.this.TEK_QST_IN_TICKET != 1) {
                             etic etic = etic.this;
@@ -243,7 +245,7 @@ public class etic extends Activity {
                             return;
                         }
                         return;
-                    case C0051R.C0052id.bNextTic:
+                    case R.id.bNextTic:
                         etic.this.Set_ImTic = true;
                         if (etic.this.INI_SELECT_QST && etic.this.TEK_QST_IN_TICKET != etic.this.N_QST) {
                             etic.this.TEK_QST_IN_TICKET++;
@@ -251,13 +253,13 @@ public class etic extends Activity {
                             return;
                         }
                         return;
-                    case C0051R.C0052id.iBuUpBrowsTic:
+                    case R.id.iBuUpBrowsTic:
                         etic.this.scroll(10);
                         return;
-                    case C0051R.C0052id.iBuDownBrowsTic:
+                    case R.id.iBuDownBrowsTic:
                         etic.this.scroll(-10);
                         return;
-                    case C0051R.C0052id.chVar1Tic:
+                    case R.id.chVar1Tic:
                         if (etic.this.chVar1Tic.isChecked()) {
                             etic.this.onClickCheck(1);
                             return;
@@ -265,16 +267,16 @@ public class etic extends Activity {
                             etic.this.chVar1Tic.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.bVoprTic:
+                    case R.id.bVoprTic:
                         if (etic.this.HELP_YES) {
                             etic.this.setPodskazka();
                             return;
                         }
                         return;
-                    case C0051R.C0052id.bOKTic:
+                    case R.id.bOKTic:
                         etic.this.setOK();
                         return;
-                    case C0051R.C0052id.bCloseTic:
+                    case R.id.bCloseTic:
                         if (etic.this.BROWSER_ERR) {
                             etic.this.TEK_QST_IN_TICKET = 1;
                             etic.this.myService4.doSend("RN" + etic.this.WORK_NUM + "," + Integer.toString(etic.this.MASS_N_ERR_QST[etic.this.TEK_QST_IN_TICKET - 1]));
@@ -286,7 +288,7 @@ public class etic extends Activity {
                         etic.this.EXAMEN_BREAK_ON_ERR = true;
                         etic.this.finish();
                         return;
-                    case C0051R.C0052id.chVar3Tic:
+                    case R.id.chVar3Tic:
                         if (etic.this.chVar3Tic.isChecked()) {
                             etic.this.onClickCheck(3);
                             return;
@@ -294,30 +296,30 @@ public class etic extends Activity {
                             etic.this.chVar3Tic.setChecked(true);
                             return;
                         }
-                    case C0051R.C0052id.vImageTic:
+                    case R.id.vImageTic:
                         etic.this.click_im();
                         return;
-                    case C0051R.C0052id.tVar1Tic:
+                    case R.id.tVar1Tic:
                         etic.this.NUM = 1;
                         etic.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar3Tic:
+                    case R.id.tVar3Tic:
                         etic.this.NUM = 3;
                         etic.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar5Tic:
+                    case R.id.tVar5Tic:
                         etic.this.NUM = 5;
                         etic.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar4Tic:
+                    case R.id.tVar4Tic:
                         etic.this.NUM = 4;
                         etic.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar6Tic:
+                    case R.id.tVar6Tic:
                         etic.this.NUM = 6;
                         etic.this.setNum();
                         return;
-                    case C0051R.C0052id.tVar2Tic:
+                    case R.id.tVar2Tic:
                         etic.this.NUM = 2;
                         etic.this.setNum();
                         return;
@@ -1059,7 +1061,7 @@ public class etic extends Activity {
             this.tResult.setTextColor(this.redColor);
             this.tResult.setText("Не сдан");
             if (this.M_SOUND) {
-                MediaPlayer.create(this, C0051R.raw.f9s5).start();
+                MediaPlayer.create(this, R.raw.s5).start();
             }
             this.EXAMEN_BREAK_ON_ERR = true;
         }
@@ -1067,7 +1069,7 @@ public class etic extends Activity {
             this.tResult.setTextColor(this.GreenText);
             this.tResult.setText("Сдан");
             if (this.M_SOUND) {
-                MediaPlayer.create(this, C0051R.raw.tada).start();
+                MediaPlayer.create(this, R.raw.tada).start();
             }
         }
         set_ocenka();
