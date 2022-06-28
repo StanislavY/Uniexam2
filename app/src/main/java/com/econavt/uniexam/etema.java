@@ -28,7 +28,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.econavt.uniexam.ExamService2;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -128,7 +127,7 @@ public class etema extends Activity {
     long interval = 1000;
     LinearLayout linearLayout1Tem;
     LinearLayout linearLayout2Tem;
-    ExamService2 myService3;
+    ExamServiceRX myService3;
     int pauza_t = 5;
     int redColor = -5636096;
     ServiceConnection sConn3;
@@ -405,11 +404,11 @@ public class etema extends Activity {
             };
             registerReceiver(this.br3, new IntentFilter("com.econavt.uniexam"));
         }
-        this.intent3 = new Intent(this, ExamService2.class);
+        this.intent3 = new Intent(this, ExamServiceRX.class);
         this.sConn3 = new ServiceConnection() {
             public void onServiceConnected(ComponentName name, IBinder binder) {
                 if (!etema.this.STARTING) {
-                    etema.this.myService3 = ((ExamService2.MyBinder) binder).getService();
+                    etema.this.myService3 = ((ExamServiceRX.MyBinder) binder).getService();
                     etema.this.bound = true;
                     etema.this.END_EXAMEN = false;
                     for (int i = 500; i > 0; i--) {

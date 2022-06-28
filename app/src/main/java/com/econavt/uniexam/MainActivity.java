@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.econavt.uniexam.ExamService2;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -45,7 +44,8 @@ public class MainActivity extends Activity {
     BroadcastReceiver f3br;
     byte[] buffer;
     Intent intent;
-    ExamService2 myService;
+//    ExamService2 myService;
+    ExamServiceRX myService;
     int pauza_t = 5;
     ServiceConnection sConn;
     SharedPreferences sPref;
@@ -109,11 +109,11 @@ public class MainActivity extends Activity {
             };
             registerReceiver(this.f3br, new IntentFilter("com.econavt.uniexam"));
         }
-        this.intent = new Intent(this, ExamService2.class);
+        this.intent = new Intent(this, ExamServiceRX.class);
         this.sConn = new ServiceConnection() {
             public void onServiceConnected(ComponentName name, IBinder binder) {
                 if (!MainActivity.this.STARTING) {
-                    MainActivity.this.myService = ((ExamService2.MyBinder) binder).getService();
+                    MainActivity.this.myService = ((ExamServiceRX.MyBinder) binder).getService();
                     MainActivity.this.bound = true;
                 }
             }
@@ -169,18 +169,17 @@ public class MainActivity extends Activity {
             public void run() {
                 Handler handler = uiHandler;
                 final Timer timer = tmr;
-                handler.post(new Runnable() {
-                    public void run() {
-                        MainActivity.this.setNumName();
-                        timer.cancel();
-                    }
+                handler.post(() -> {
+                    MainActivity.this.setNumName();
+                    timer.cancel();
                 });
             }
         }, 300);
     }
 
     public void setNumName() {
-        this.myService.doSend("#" + this.WORK_NAME + "#" + this.WORK_NUM);
+//        this.myService.doSend("#" + this.WORK_NAME + "#" + this.WORK_NUM);
+        this.myService.doSendRX("#" + this.WORK_NAME + "#" + this.WORK_NUM);
     }
 
     public void set_comand(String str) {
@@ -247,7 +246,7 @@ public class MainActivity extends Activity {
             Process.killProcess(Process.myPid());
             return;
         }
-        this.myService.doSend(String.valueOf(this.SERVER_ADR) + "#" + this.SERVER_PORT + "#" + this.WORK_NAME);
+        this.myService.doSend(this.SERVER_ADR + "#" + this.SERVER_PORT + "#" + this.WORK_NAME);
         for (int i = 1000; i > 0; i--) {
             this.tName.setText("wremennyi Text 1234567890 1234567890");
             this.tName.setText("");
@@ -265,7 +264,7 @@ public class MainActivity extends Activity {
         }
         this.tName.setText("");
         if (!this.myService.connect_yes) {
-            Toast.makeText(this, "Неудачное подключение. Попробуйте ещё раз.", 0).show();
+            Toast.makeText(this, "Неудачное подключение. Попробуйте ещё раз.", Toast.LENGTH_SHORT).show();
             return;
         }
         this.myService.schedule();
@@ -277,7 +276,7 @@ public class MainActivity extends Activity {
         this.bStart.setText("Выход");
         this.STARTING = true;
         set_timer();
-        this.bExit.setVisibility(4);
+        this.bExit.setVisibility(View.INVISIBLE);
         this.bExit.setText("");
         this.bExit.setWidth(2);
         this.LLBut3.invalidate();

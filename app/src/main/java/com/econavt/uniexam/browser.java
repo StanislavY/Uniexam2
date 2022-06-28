@@ -30,7 +30,6 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.econavt.uniexam.ExamService2;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -103,7 +102,7 @@ public class browser extends Activity {
     Intent intent2;
     LinearLayout linearLayout1;
     LinearLayout linearLayout2;
-    ExamService2 myService2;
+    ExamServiceRX myService2;
     int redColor = -5636096;
     ServiceConnection sConn2;
     SharedPreferences sPref;
@@ -398,11 +397,11 @@ public class browser extends Activity {
             };
             registerReceiver(this.br2, new IntentFilter("com.econavt.uniexam"));
         }
-        this.intent2 = new Intent(this, ExamService2.class);
+        this.intent2 = new Intent(this, ExamServiceRX.class);
         this.sConn2 = new ServiceConnection() {
             public void onServiceConnected(ComponentName name, IBinder binder) {
                 if (!browser.this.STARTING) {
-                    browser.this.myService2 = ((ExamService2.MyBinder) binder).getService();
+                    browser.this.myService2 = ((ExamServiceRX.MyBinder) binder).getService();
                     browser.this.bound = true;
                     browser.this.myService2.doSend("B" + browser.this.WORK_NUM + ",0,0,0,1");
                 }

@@ -29,7 +29,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.econavt.uniexam.ExamService2;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -118,7 +117,7 @@ public class etic extends Activity {
     long interval = 1000;
     LinearLayout linearLayout1Tic;
     LinearLayout linearLayout2Tic;
-    ExamService2 myService4;
+    ExamServiceRX myService4;
     int pauza_t = 5;
     int redColor = -5636096;
     ServiceConnection sConn4;
@@ -197,135 +196,133 @@ public class etic extends Activity {
         this.tZap2 = (TextView) findViewById(R.id.tZap2);
         this.tZap3 = (TextView) findViewById(R.id.tZap3);
         this.tZap4 = (TextView) findViewById(R.id.tZap4);
-        View.OnClickListener oclBtn2 = new View.OnClickListener() {
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.chVar5Tic:
-                        if (etic.this.chVar5Tic.isChecked()) {
-                            etic.this.onClickCheck(5);
-                            return;
-                        } else {
-                            etic.this.chVar5Tic.setChecked(true);
-                            return;
-                        }
-                    case R.id.chVar4Tic:
-                        if (etic.this.chVar4Tic.isChecked()) {
-                            etic.this.onClickCheck(4);
-                            return;
-                        } else {
-                            etic.this.chVar4Tic.setChecked(true);
-                            return;
-                        }
-                    case R.id.chVar2Tic:
-                        if (etic.this.chVar2Tic.isChecked()) {
-                            etic.this.onClickCheck(2);
-                            return;
-                        } else {
-                            etic.this.chVar2Tic.setChecked(true);
-                            return;
-                        }
-                    case R.id.chVar6Tic:
-                        if (etic.this.chVar6Tic.isChecked()) {
-                            etic.this.onClickCheck(6);
-                            return;
-                        } else {
-                            etic.this.chVar6Tic.setChecked(true);
-                            return;
-                        }
-                    case R.id.tVoprMainTic:
-                        etic.this.NUM = 7;
-                        etic.this.setNum();
+        View.OnClickListener oclBtn2 = v -> {
+            switch (v.getId()) {
+                case R.id.chVar5Tic:
+                    if (etic.this.chVar5Tic.isChecked()) {
+                        etic.this.onClickCheck(5);
                         return;
-                    case R.id.bPrevTic:
-                        etic.this.Set_ImTic = true;
-                        if (etic.this.INI_SELECT_QST && etic.this.TEK_QST_IN_TICKET != 1) {
-                            etic etic = etic.this;
-                            etic.TEK_QST_IN_TICKET--;
-                            etic.this.setNextVopros();
-                            return;
-                        }
+                    } else {
+                        etic.this.chVar5Tic.setChecked(true);
                         return;
-                    case R.id.bNextTic:
-                        etic.this.Set_ImTic = true;
-                        if (etic.this.INI_SELECT_QST && etic.this.TEK_QST_IN_TICKET != etic.this.N_QST) {
-                            etic.this.TEK_QST_IN_TICKET++;
-                            etic.this.setNextVopros();
-                            return;
-                        }
+                    }
+                case R.id.chVar4Tic:
+                    if (etic.this.chVar4Tic.isChecked()) {
+                        etic.this.onClickCheck(4);
                         return;
-                    case R.id.iBuUpBrowsTic:
-                        etic.this.scroll(10);
+                    } else {
+                        etic.this.chVar4Tic.setChecked(true);
                         return;
-                    case R.id.iBuDownBrowsTic:
-                        etic.this.scroll(-10);
+                    }
+                case R.id.chVar2Tic:
+                    if (etic.this.chVar2Tic.isChecked()) {
+                        etic.this.onClickCheck(2);
                         return;
-                    case R.id.chVar1Tic:
-                        if (etic.this.chVar1Tic.isChecked()) {
-                            etic.this.onClickCheck(1);
-                            return;
-                        } else {
-                            etic.this.chVar1Tic.setChecked(true);
-                            return;
-                        }
-                    case R.id.bVoprTic:
-                        if (etic.this.HELP_YES) {
-                            etic.this.setPodskazka();
-                            return;
-                        }
+                    } else {
+                        etic.this.chVar2Tic.setChecked(true);
                         return;
-                    case R.id.bOKTic:
-                        etic.this.setOK();
+                    }
+                case R.id.chVar6Tic:
+                    if (etic.this.chVar6Tic.isChecked()) {
+                        etic.this.onClickCheck(6);
                         return;
-                    case R.id.bCloseTic:
-                        if (etic.this.BROWSER_ERR) {
-                            etic.this.TEK_QST_IN_TICKET = 1;
-                            etic.this.myService4.doSend("RN" + etic.this.WORK_NUM + "," + Integer.toString(etic.this.MASS_N_ERR_QST[etic.this.TEK_QST_IN_TICKET - 1]));
-                            etic.this.bOKTic.setEnabled(false);
-                            etic.this.bCloseTic.setEnabled(false);
-                            return;
-                        }
-                        etic.this.myService4.doSend("ETX,1");
-                        etic.this.EXAMEN_BREAK_ON_ERR = true;
-                        etic.this.finish();
+                    } else {
+                        etic.this.chVar6Tic.setChecked(true);
                         return;
-                    case R.id.chVar3Tic:
-                        if (etic.this.chVar3Tic.isChecked()) {
-                            etic.this.onClickCheck(3);
-                            return;
-                        } else {
-                            etic.this.chVar3Tic.setChecked(true);
-                            return;
-                        }
-                    case R.id.vImageTic:
-                        etic.this.click_im();
+                    }
+                case R.id.tVoprMainTic:
+                    etic.this.NUM = 7;
+                    etic.this.setNum();
+                    return;
+                case R.id.bPrevTic:
+                    etic.this.Set_ImTic = true;
+                    if (etic.this.INI_SELECT_QST && etic.this.TEK_QST_IN_TICKET != 1) {
+                        etic etic = etic.this;
+                        etic.TEK_QST_IN_TICKET--;
+                        etic.this.setNextVopros();
                         return;
-                    case R.id.tVar1Tic:
-                        etic.this.NUM = 1;
-                        etic.this.setNum();
+                    }
+                    return;
+                case R.id.bNextTic:
+                    etic.this.Set_ImTic = true;
+                    if (etic.this.INI_SELECT_QST && etic.this.TEK_QST_IN_TICKET != etic.this.N_QST) {
+                        etic.this.TEK_QST_IN_TICKET++;
+                        etic.this.setNextVopros();
                         return;
-                    case R.id.tVar3Tic:
-                        etic.this.NUM = 3;
-                        etic.this.setNum();
+                    }
+                    return;
+                case R.id.iBuUpBrowsTic:
+                    etic.this.scroll(10);
+                    return;
+                case R.id.iBuDownBrowsTic:
+                    etic.this.scroll(-10);
+                    return;
+                case R.id.chVar1Tic:
+                    if (etic.this.chVar1Tic.isChecked()) {
+                        etic.this.onClickCheck(1);
                         return;
-                    case R.id.tVar5Tic:
-                        etic.this.NUM = 5;
-                        etic.this.setNum();
+                    } else {
+                        etic.this.chVar1Tic.setChecked(true);
                         return;
-                    case R.id.tVar4Tic:
-                        etic.this.NUM = 4;
-                        etic.this.setNum();
+                    }
+                case R.id.bVoprTic:
+                    if (etic.this.HELP_YES) {
+                        etic.this.setPodskazka();
                         return;
-                    case R.id.tVar6Tic:
-                        etic.this.NUM = 6;
-                        etic.this.setNum();
+                    }
+                    return;
+                case R.id.bOKTic:
+                    etic.this.setOK();
+                    return;
+                case R.id.bCloseTic:
+                    if (etic.this.BROWSER_ERR) {
+                        etic.this.TEK_QST_IN_TICKET = 1;
+                        etic.this.myService4.doSend("RN" + etic.this.WORK_NUM + "," + Integer.toString(etic.this.MASS_N_ERR_QST[etic.this.TEK_QST_IN_TICKET - 1]));
+                        etic.this.bOKTic.setEnabled(false);
+                        etic.this.bCloseTic.setEnabled(false);
                         return;
-                    case R.id.tVar2Tic:
-                        etic.this.NUM = 2;
-                        etic.this.setNum();
+                    }
+                    etic.this.myService4.doSend("ETX,1");
+                    etic.this.EXAMEN_BREAK_ON_ERR = true;
+                    etic.this.finish();
+                    return;
+                case R.id.chVar3Tic:
+                    if (etic.this.chVar3Tic.isChecked()) {
+                        etic.this.onClickCheck(3);
                         return;
-                    default:
+                    } else {
+                        etic.this.chVar3Tic.setChecked(true);
                         return;
-                }
+                    }
+                case R.id.vImageTic:
+                    etic.this.click_im();
+                    return;
+                case R.id.tVar1Tic:
+                    etic.this.NUM = 1;
+                    etic.this.setNum();
+                    return;
+                case R.id.tVar3Tic:
+                    etic.this.NUM = 3;
+                    etic.this.setNum();
+                    return;
+                case R.id.tVar5Tic:
+                    etic.this.NUM = 5;
+                    etic.this.setNum();
+                    return;
+                case R.id.tVar4Tic:
+                    etic.this.NUM = 4;
+                    etic.this.setNum();
+                    return;
+                case R.id.tVar6Tic:
+                    etic.this.NUM = 6;
+                    etic.this.setNum();
+                    return;
+                case R.id.tVar2Tic:
+                    etic.this.NUM = 2;
+                    etic.this.setNum();
+                    return;
+                default:
+                    return;
             }
         };
         this.bCloseTic.setOnClickListener(oclBtn2);
@@ -388,11 +385,11 @@ public class etic extends Activity {
             };
             registerReceiver(this.br4, new IntentFilter("com.econavt.uniexam"));
         }
-        this.intent4 = new Intent(this, ExamService2.class);
+        this.intent4 = new Intent(this, ExamServiceRX.class);
         this.sConn4 = new ServiceConnection() {
             public void onServiceConnected(ComponentName name, IBinder binder) {
                 if (!etic.this.STARTING) {
-                    etic.this.myService4 = ((ExamService2.MyBinder) binder).getService();
+                    etic.this.myService4 = ((ExamServiceRX.MyBinder) binder).getService();
                     etic.this.bound = true;
                     etic.this.END_EXAMEN = false;
                     etic.this.myService4.doSend("EIP");
@@ -1006,7 +1003,7 @@ public class etic extends Activity {
         if (!this.END_EXAMEN && checkYes()) {
             clearSelect();
             if (this.OTVETS[this.TEK_QST_IN_TICKET - 1] > 0) {
-                Toast.makeText(this, "Ответ уже получен.", 0).show();
+                Toast.makeText(this, "Ответ уже получен.", Toast.LENGTH_SHORT).show();
                 return;
             }
             this.myService4.doSend("EKI" + this.WORK_NUM + "," + Integer.toString(this.THIS_OTVET) + "," + Integer.toString(this.TEK_QST_IN_TICKET - 1));
@@ -1144,7 +1141,7 @@ public class etic extends Activity {
 
     /* access modifiers changed from: package-private */
     public void setPodskazka() {
-        Toast.makeText(this, this.PODSKAZKA, 1).show();
+        Toast.makeText(this, this.PODSKAZKA, Toast.LENGTH_LONG).show();
     }
 
     /* access modifiers changed from: package-private */
@@ -1309,13 +1306,13 @@ public class etic extends Activity {
         this.chVar1Tic.setHeight(WrInt / 2);
         this.chVar2Tic.setHeight(WrInt / 2);
         this.tZap1.setHeight(WrInt / 4);
-        this.tZap1.setVisibility(4);
+        this.tZap1.setVisibility(View.INVISIBLE);
         this.tZap2.setHeight(WrInt / 4);
-        this.tZap2.setVisibility(4);
+        this.tZap2.setVisibility(View.INVISIBLE);
         this.tZap3.setHeight(WrInt / 4);
-        this.tZap3.setVisibility(4);
+        this.tZap3.setVisibility(View.INVISIBLE);
         this.tZap4.setHeight(WrInt / 4);
-        this.tZap4.setVisibility(4);
+        this.tZap4.setVisibility(View.INVISIBLE);
         this.chVar3Tic.setHeight(WrInt / 2);
         this.chVar4Tic.setHeight(WrInt / 2);
         this.chVar5Tic.setHeight(WrInt / 2);
