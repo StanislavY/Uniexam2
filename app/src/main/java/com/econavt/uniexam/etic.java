@@ -277,12 +277,12 @@ public class etic extends Activity {
                 case R.id.bCloseTic:
                     if (etic.this.BROWSER_ERR) {
                         etic.this.TEK_QST_IN_TICKET = 1;
-                        etic.this.myService4.doSend("RN" + etic.this.WORK_NUM + "," + Integer.toString(etic.this.MASS_N_ERR_QST[etic.this.TEK_QST_IN_TICKET - 1]));
+                        etic.this.myService4.doSendRX("RN" + etic.this.WORK_NUM + "," + Integer.toString(etic.this.MASS_N_ERR_QST[etic.this.TEK_QST_IN_TICKET - 1]));
                         etic.this.bOKTic.setEnabled(false);
                         etic.this.bCloseTic.setEnabled(false);
                         return;
                     }
-                    etic.this.myService4.doSend("ETX,1");
+                    etic.this.myService4.doSendRX("ETX,1");
                     etic.this.EXAMEN_BREAK_ON_ERR = true;
                     etic.this.finish();
                     return;
@@ -697,7 +697,68 @@ public class etic extends Activity {
         if (r8.INI_SHOW_REZ == false) goto L_0x00a9;
      */
     /* Code decompiled incorrectly, please refer to instructions dump. */
+
+
     public void set_ekran() {
+        String WrStr;
+        this.ZADERJKA_t = 0;
+        this.tVar3Tic.setVisibility(View.INVISIBLE);
+        this.tVar4Tic.setVisibility(View.INVISIBLE);
+        this.tVar5Tic.setVisibility(View.INVISIBLE);
+        this.tVar6Tic.setVisibility(View.INVISIBLE);
+        this.chVar3Tic.setVisibility(View.INVISIBLE);
+        this.chVar4Tic.setVisibility(View.INVISIBLE);
+        this.chVar5Tic.setVisibility(View.INVISIBLE);
+        this.chVar6Tic.setVisibility(View.INVISIBLE);
+        this.tVoprMainTic.setText(this.TEK_QUEST);
+        switch (this.TEK_NUM_VAR_OTVETOV) {
+            case 6:
+                this.tVar6Tic.setVisibility(View.VISIBLE);
+                this.chVar6Tic.setVisibility(View.VISIBLE);
+                this.tVar6Tic.setText(this.TEK_MAS_OTVET[5]);
+            case 5:
+                this.tVar5Tic.setVisibility(View.VISIBLE);
+                this.chVar5Tic.setVisibility(View.VISIBLE);
+                this.tVar5Tic.setText(this.TEK_MAS_OTVET[4]);
+            case 4:
+                this.tVar4Tic.setVisibility(View.VISIBLE);
+                this.chVar4Tic.setVisibility(View.VISIBLE);
+                this.tVar4Tic.setText(this.TEK_MAS_OTVET[3]);
+            case 3:
+                this.tVar3Tic.setVisibility(View.VISIBLE);
+                this.chVar3Tic.setVisibility(View.VISIBLE);
+                this.tVar3Tic.setText(this.TEK_MAS_OTVET[2]);
+                break;
+        }
+        this.tVar2Tic.setText(this.TEK_MAS_OTVET[1]);
+        this.tVar1Tic.setText(this.TEK_MAS_OTVET[0]);
+        this.tOtvetYesTic.setText(String.valueOf(Integer.toString(this.TEK_QST_IN_TICKET)) + " из " + Integer.toString(this.N_QST));
+        if (this.BROWSER_ERR) {
+            int WrInt = this.MASS_ERR_PRESSED[this.TEK_QST_IN_TICKET - 1];
+            if (WrInt == 0) {
+                WrStr = "--";
+            } else {
+                WrStr = Integer.toString(WrInt);
+            }
+            this.tNOtvetsTic.setText(WrStr);
+            this.tNErrorsTic.setText(Integer.toString(this.TEK_PR_OTVET));
+        }
+        if (this.INI_SHOW_REZ) {
+            switch (this.OTVETS[this.TEK_QST_IN_TICKET - 1]) {
+                case 1:
+                    this.tOtvetYesTic.setTextColor(this.redColor);
+                    break;
+                case 5:
+                    this.tOtvetYesTic.setTextColor(this.GreenText);
+                    break;
+                default:
+                    this.tOtvetYesTic.setTextColor(this.blackColor);
+                    break;
+            }
+        }
+    }
+
+    public void set_ekranOld() {
 
 
         String a = "";
@@ -965,7 +1026,7 @@ public class etic extends Activity {
             }
             this.tNoAns.setText(Integer.toString(NoAns));
             this.tOtvetYesTic.setText(String.valueOf(Integer.toString(this.TEK_QST_IN_TICKET)) + " из " + Integer.toString(this.N_QST));
-            this.myService4.doSend("RE" + this.WORK_NUM);
+            this.myService4.doSendRX("RE" + this.WORK_NUM);
         }
     }
 
@@ -1015,7 +1076,7 @@ public class etic extends Activity {
                 Toast.makeText(this, "Ответ уже получен.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            this.myService4.doSend("EKI" + this.WORK_NUM + "," + Integer.toString(this.THIS_OTVET) + "," + Integer.toString(this.TEK_QST_IN_TICKET - 1));
+            this.myService4.doSendRX("EKI" + this.WORK_NUM + "," + Integer.toString(this.THIS_OTVET) + "," + Integer.toString(this.TEK_QST_IN_TICKET - 1));
             this.ANSWERS++;
             this.tNOtvetsTic.setText(Integer.toString(this.ANSWERS));
             this.MASS_PRESSED[this.TEK_QST_IN_TICKET - 1] = this.THIS_OTVET;
@@ -1038,11 +1099,11 @@ public class etic extends Activity {
             }
             if (this.INI_BREAK_ON_ERR && this.ERRORS > this.ERR_RATE_3) {
                 set_resultat();
-                this.myService4.doSend("ETE");
+                this.myService4.doSendRX("ETE");
             }
             if (get_examen()) {
                 set_resultat();
-                this.myService4.doSend("ETE");
+                this.myService4.doSendRX("ETE");
             }
             this.bPrevTic.setEnabled(false);
             this.bNextTic.setEnabled(false);
@@ -1156,10 +1217,10 @@ public class etic extends Activity {
     /* access modifiers changed from: package-private */
     public void setNextVopros() {
         if (this.BROWSER_ERR) {
-            this.myService4.doSend("RN" + this.WORK_NUM + "," + Integer.toString(this.MASS_N_ERR_QST[this.TEK_QST_IN_TICKET - 1]));
+            this.myService4.doSendRX("RN" + this.WORK_NUM + "," + Integer.toString(this.MASS_N_ERR_QST[this.TEK_QST_IN_TICKET - 1]));
         } else {
             String Tic = Integer.toString(this.TEK_TICKET);
-            this.myService4.doSend("EIN" + this.WORK_NUM + "," + Tic + "," + Integer.toString(this.TEK_QST_IN_TICKET));
+            this.myService4.doSendRX("EIN" + this.WORK_NUM + "," + Tic + "," + Integer.toString(this.TEK_QST_IN_TICKET));
         }
         setNomVopros();
         this.bPrevTic.setEnabled(false);

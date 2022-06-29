@@ -58,13 +58,9 @@ public class ExamServiceRX extends Service {
     }
 
 
-    private void Log(String message){
-        System.out.println("Connection " + connect_yes + " " + message);
-    }
-
     public void doSend(String str) {
 
-        UniLog.Method("connected: "+ connection.isConnected());
+        UniLog.Method("connected: "+ connect_yes);
         if (this.connect_yes) {
             try {
                 UniLog.onSend(str);
@@ -74,7 +70,7 @@ public class ExamServiceRX extends Service {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                Log(e.getMessage());
+                UniLog.error(e.getMessage());
             }
         } else {
             String[] fields_main = str.split("#");
@@ -182,11 +178,10 @@ public class ExamServiceRX extends Service {
                 if (length < 0) {
                     throw new EOFException("Was got -1");
                 }
-                Log("in " + new String(b));
 
             } catch (IOException e3) {
                 e3.printStackTrace();
-                Log(e3.getMessage());
+                UniLog.error(e3.getMessage());
             }
             if (b[0] == 89) {
                 this.READIND_DATA = true;

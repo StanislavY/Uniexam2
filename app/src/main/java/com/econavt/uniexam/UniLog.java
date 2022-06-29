@@ -9,6 +9,10 @@ class UniLog {
     }
 
 
+    public static void error(Object message){
+        print(" X " + message);
+    }
+
     public static void onReceived(Object message){
         print(" <- " + message);
     }
@@ -16,6 +20,9 @@ class UniLog {
     public static void onSend(Object message){
         print(" -> " + message);
     }
+
+
+
 
     public static void Method(){
 
