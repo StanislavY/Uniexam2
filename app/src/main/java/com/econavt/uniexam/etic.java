@@ -346,6 +346,7 @@ public class etic extends Activity {
         this.chVar5Tic.setOnClickListener(oclBtn2);
         this.chVar6Tic.setOnClickListener(oclBtn2);
         this.vImageTic.setOnClickListener(oclBtn2);
+        //todo Найти что за ресурсы
         new ArrayAdapter<>(this, 17367048, this.data_strings).setDropDownViewResource(17367049);
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -392,7 +393,7 @@ public class etic extends Activity {
                     etic.this.myService4 = ((ExamServiceRX.MyBinder) binder).getService();
                     etic.this.bound = true;
                     etic.this.END_EXAMEN = false;
-                    etic.this.myService4.doSend("EIP");
+                    etic.this.myService4.doSendRX("EIP");
                     etic.this.STARTING = true;
                 }
             }
@@ -694,6 +695,11 @@ public class etic extends Activity {
      */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public void set_ekran() {
+
+
+        String a = "";
+        String b = a + "";
+        System.out.println(b);
         /*
             r8 = this;
             r7 = 4

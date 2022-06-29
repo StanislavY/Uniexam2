@@ -1070,7 +1070,7 @@ public class etema extends Activity {
         if (!this.END_EXAMEN && checkYes()) {
             clearSelect();
             if (this.OTVETS[this.NOMVOPR - 1] > 0) {
-                Toast.makeText(this, "Ответ уже получен.", 0).show();
+                Toast.makeText(this, "Ответ уже получен.", Toast.LENGTH_SHORT).show();
                 return;
             }
             this.myService3.doSend("EKT" + this.WORK_NUM + "," + Integer.toString(this.THIS_OTVET) + "," + Integer.toString(this.NOMVOPR - 1));
@@ -1131,7 +1131,7 @@ public class etema extends Activity {
 
     /* access modifiers changed from: package-private */
     public void setPodskazka() {
-        Toast.makeText(this, this.PODSKAZKA, 1).show();
+        Toast.makeText(this, this.PODSKAZKA, Toast.LENGTH_LONG).show();
     }
 
     /* access modifiers changed from: package-private */
