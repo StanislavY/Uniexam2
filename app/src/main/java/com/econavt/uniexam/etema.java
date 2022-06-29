@@ -604,6 +604,76 @@ public class etema extends Activity {
         this.tmr3.schedule(tTask, 200);
     }
 
+
+    public void set_ekran() {
+        String WrStr;
+        this.tVar3Tem.setVisibility(4);
+        this.tVar4Tem.setVisibility(4);
+        this.tVar5Tem.setVisibility(4);
+        this.tVar6Tem.setVisibility(4);
+        this.chVar3Tem.setVisibility(4);
+        this.chVar4Tem.setVisibility(4);
+        this.chVar5Tem.setVisibility(4);
+        this.chVar6Tem.setVisibility(4);
+        this.tTema.setText(this.TEK_NAME_TEMA);
+        this.tVoprMainTem.setText(this.TEK_QUEST);
+        switch (this.TEK_NUM_VAR_OTVETOV) {
+            case 6:
+                this.tVar6Tem.setVisibility(0);
+                this.chVar6Tem.setVisibility(0);
+                this.tVar6Tem.setText(this.TEK_MAS_OTVET[5]);
+            case 5:
+                this.tVar5Tem.setVisibility(0);
+                this.chVar5Tem.setVisibility(0);
+                this.tVar5Tem.setText(this.TEK_MAS_OTVET[4]);
+            case 4:
+                this.tVar4Tem.setVisibility(0);
+                this.chVar4Tem.setVisibility(0);
+                this.tVar4Tem.setText(this.TEK_MAS_OTVET[3]);
+            case 3:
+                this.tVar3Tem.setVisibility(0);
+                this.chVar3Tem.setVisibility(0);
+                this.tVar3Tem.setText(this.TEK_MAS_OTVET[2]);
+                break;
+        }
+        this.tVar2Tem.setText(this.TEK_MAS_OTVET[1]);
+        this.tVar1Tem.setText(this.TEK_MAS_OTVET[0]);
+        this.tOtvetYesTem.setText(String.valueOf(Integer.toString(this.NOMVOPR)) + " из " + Integer.toString(this.MAXVOPR));
+        if (this.BROWSER_ERR) {
+            int WrInt = this.MASS_ERR_PRESSED[this.NOMVOPR - 1];
+            if (WrInt == 0) {
+                WrStr = "--";
+            } else {
+                WrStr = Integer.toString(WrInt);
+            }
+            this.tNOtvetsTem.setText(WrStr);
+            this.tNErrorsTem.setText(Integer.toString(this.TEK_PR_OTVET));
+        }
+        if (this.INI_SHOW_REZ) {
+            switch (this.OTVETS[this.NOMVOPR - 1]) {
+                case 1:
+                    this.tOtvetYesTem.setTextColor(this.redColor);
+                    break;
+                case 5:
+                    this.tOtvetYesTem.setTextColor(this.GreenText);
+                    break;
+                default:
+                    this.tOtvetYesTem.setTextColor(this.blackColor);
+                    break;
+            }
+        }
+        setNomVopros();
+        if (this.TEK_PICT.length() == 0) {
+            this.vImageTem.setImageBitmap(null);
+            this.vImageTem.setBackgroundColor(this.backColor);
+        } else if (this.BROWSER_ERR) {
+            this.myService3.doSend("RI" + this.WORK_NUM + "," + Integer.toString(this.MASS_N_ERR_QST[this.NOMVOPR - 1]));
+        } else {
+            this.myService3.doSend("ETI" + this.WORK_NUM + ",-1");
+        }
+    }
+
+
     /* JADX WARNING: Code restructure failed: missing block: B:11:0x00a4, code lost:
         switch(r8.OTVETS[r8.NOMVOPR - 1]) {
             case 1: goto L_0x011e;
@@ -691,7 +761,8 @@ public class etema extends Activity {
         if (r8.INI_SHOW_REZ == false) goto L_0x00ae;
      */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public void set_ekran() {
+
+    public void set_ekranOld() {
         /*
             r8 = this;
             r7 = 4
