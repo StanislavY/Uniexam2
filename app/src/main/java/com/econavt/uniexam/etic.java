@@ -770,9 +770,9 @@ public class etic extends Activity {
             this.vImageTic.setImageBitmap(null);
             this.vImageTic.setBackgroundColor(this.backColor);
         } else if (this.BROWSER_ERR) {
-            this.myService4.doSend("RI" + this.WORK_NUM + "," + Integer.toString(this.MASS_N_ERR_QST[this.TEK_QST_IN_TICKET - 1]));
+            this.myService4.doSendRX("RI" + this.WORK_NUM + "," + Integer.toString(this.MASS_N_ERR_QST[this.TEK_QST_IN_TICKET - 1]));
         } else {
-            this.myService4.doSend("EII," + Integer.toString(this.TEK_ALL_QST));
+            this.myService4.doSendRX("EII," + Integer.toString(this.TEK_ALL_QST));
         }
     }
 
