@@ -374,6 +374,9 @@ public class etic extends Activity {
             this.br4 = new BroadcastReceiver() {
                 public void onReceive(Context context, Intent intent) {
                     byte[] byteArray = intent.getByteArrayExtra(MainActivity.PARAM_BUF);
+
+                    UniLog.onReceived(new String(byteArray));
+
                     if (byteArray[0] == 45) {
                         etic.this.CommString = new String(byteArray);
                         etic.this.set_comand(etic.this.CommString);
@@ -506,7 +509,7 @@ public class etic extends Activity {
                     } else {
                         this.bVoprTic.setEnabled(false);
                     }
-                    this.myService4.doSend("EI");
+                    this.myService4.doSendRX("EI");
                     return;
                 case 50:
                     String[] fields_main2 = Comm.split("#");

@@ -64,10 +64,10 @@ public class ExamServiceRX extends Service {
 
     public void doSend(String str) {
 
-        Log("dosend " + str);
+        UniLog.Method("connected: "+ connection.isConnected());
         if (this.connect_yes) {
             try {
-                Log("out " + new String(str.getBytes()));
+                UniLog.onSend(str);
                 this.out.write(str.getBytes());
 
 
