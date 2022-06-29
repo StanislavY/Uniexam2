@@ -15,7 +15,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-//import android.support.p000v4.view.MotionEventCompat;
+import android.util.Log;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -375,12 +376,12 @@ public class etic extends Activity {
                 public void onReceive(Context context, Intent intent) {
                     byte[] byteArray = intent.getByteArrayExtra(MainActivity.PARAM_BUF);
 
-                    UniLog.onReceived(new String(byteArray));
 
                     if (byteArray[0] == 45) {
                         etic.this.CommString = new String(byteArray);
                         etic.this.set_comand(etic.this.CommString);
                     } else if (byteArray[0] != 61) {
+                        UniLog.onReceived("Image");
                         Bitmap bit = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                         etic.this.vImageTic.setBackgroundColor(etic.this.zeroColor);
                         etic.this.vImageTic.setImageBitmap(bit);
@@ -396,8 +397,9 @@ public class etic extends Activity {
                     etic.this.myService4 = ((ExamServiceRX.MyBinder) binder).getService();
                     etic.this.bound = true;
                     etic.this.END_EXAMEN = false;
-                    etic.this.myService4.doSendRX("EIP");
-                    etic.this.STARTING = true;
+                    etic.this.myService4.doSendRX("EIP", () -> STARTING = true);
+
+//                    etic.this.STARTING = true;
                 }
             }
 
@@ -406,6 +408,44 @@ public class etic extends Activity {
             }
         };
     }
+
+
+//    private void tryDecodeImage(byte[] bytes) {
+//
+//        String[] elements = new String(bytes).split("#");
+//
+//
+//        byte[] biggestElement = null;
+//        int maxSize = 0;
+//
+//        for (int i = 0; i < elements.length; i++) {
+//            if (elements[i].length() > maxSize){
+//                maxSize = elements[i].length();
+//                biggestElement = elements[i].getBytes();
+//            }
+//        }
+//
+//
+//
+//            try {
+//
+//                Bitmap bit = BitmapFactory.decodeByteArray(biggestElement, 0, biggestElement.length);
+//                etic.this.vImageTic.setBackgroundColor(etic.this.zeroColor);
+//                etic.this.vImageTic.setImageBitmap(bit);
+//            } catch (
+//                    Exception e) {
+//                UniLog.error("cant decode");
+//            }
+//
+//
+//
+//
+//
+//
+//
+//
+//    }
+
 
     /* access modifiers changed from: package-private */
     public void click_im() {
@@ -455,91 +495,61 @@ public class etic extends Activity {
         if (buffer[0] == 45) {
             switch (buffer[1]) {
                 case 48:
-                    this.EXAMEN_BREAK_ON_TIME = false;
-                    this.EXAMEN_BREAK_ON_ERR = false;
-                    this.END_EXAMEN = false;
-                    this.BROWSER_ERR = false;
-                    this.NO_ANSWER = 0;
-                    this.bOKTic.setEnabled(true);
-                    this.bCloseTic.setEnabled(false);
-                    this.tOtvetsTic.setText("Ответов:");
-                    this.tErrorsTic.setText("Ошибок:");
-                    this.tNoAns.setText("0");
+                    EXAMEN_BREAK_ON_TIME = false;
+                    EXAMEN_BREAK_ON_ERR = false;
+                    END_EXAMEN = false;
+                    BROWSER_ERR = false;
+                    NO_ANSWER = 0;
+                    bOKTic.setEnabled(true);
+                    bCloseTic.setEnabled(false);
+                    tOtvetsTic.setText("Ответов:");
+                    tErrorsTic.setText("Ошибок:");
+                    tNoAns.setText("0");
                     String[] fields_main = Comm.split("#");
-                    if (Integer.parseInt(fields_main[1]) == 1) {
-                        this.INI_SELECT_QST = true;
-                    } else {
-                        this.INI_SELECT_QST = false;
-                    }
-                    if (Integer.parseInt(fields_main[2]) == 1) {
-                        this.INI_SHOW_REZ = true;
-                    } else {
-                        this.INI_SHOW_REZ = false;
-                    }
-                    if (Integer.parseInt(fields_main[3]) == 1) {
-                        this.INI_ENABLE_HINT = true;
-                    } else {
-                        this.INI_ENABLE_HINT = false;
-                    }
-                    if (Integer.parseInt(fields_main[4]) == 1) {
-                        this.INI_CONTR_TIME = true;
-                    } else {
-                        this.INI_CONTR_TIME = false;
-                    }
-                    if (Integer.parseInt(fields_main[5]) == 1) {
-                        this.INI_WORK_ERR = true;
-                    } else {
-                        this.INI_WORK_ERR = false;
-                    }
-                    if (Integer.parseInt(fields_main[6]) == 1) {
-                        this.INI_BREAK_ON_ERR = true;
-                    } else {
-                        this.INI_BREAK_ON_ERR = false;
-                    }
-                    if (Integer.parseInt(fields_main[7]) == 1) {
-                        this.INI_SDAN = true;
-                    } else {
-                        this.INI_SDAN = false;
-                    }
-                    this.ERR_RATE_3 = Integer.parseInt(fields_main[8]);
-                    this.ERR_RATE_4 = Integer.parseInt(fields_main[9]);
-                    this.ERR_RATE_5 = Integer.parseInt(fields_main[10]);
-                    if (this.INI_ENABLE_HINT) {
-                        this.bVoprTic.setEnabled(true);
-                    } else {
-                        this.bVoprTic.setEnabled(false);
-                    }
+                    INI_SELECT_QST = Integer.parseInt(fields_main[1]) == 1;
+                    INI_SHOW_REZ = Integer.parseInt(fields_main[2]) == 1;
+                    INI_ENABLE_HINT = Integer.parseInt(fields_main[3]) == 1;
+                    INI_CONTR_TIME = Integer.parseInt(fields_main[4]) == 1;
+                    INI_WORK_ERR = Integer.parseInt(fields_main[5]) == 1;
+                    INI_BREAK_ON_ERR = Integer.parseInt(fields_main[6]) == 1;
+                    INI_SDAN = Integer.parseInt(fields_main[7]) == 1;
+                    ERR_RATE_3 = Integer.parseInt(fields_main[8]);
+                    ERR_RATE_4 = Integer.parseInt(fields_main[9]);
+                    ERR_RATE_5 = Integer.parseInt(fields_main[10]);
+                    bVoprTic.setEnabled(INI_ENABLE_HINT);
+
+
                     this.myService4.doSendRX("EI");
                     return;
                 case 50:
                     String[] fields_main2 = Comm.split("#");
-                    this.N_TICKET = Integer.parseInt(fields_main2[1]);
-                    this.N_QST = Integer.parseInt(fields_main2[2]);
-                    this.TEK_TICKET = Integer.parseInt(fields_main2[3]);
-                    this.TEK_QST_IN_TICKET = Integer.parseInt(fields_main2[4]);
-                    this.SELECTED_VARIANT_TICKETS = Integer.parseInt(fields_main2[5]);
-                    this.TEK_QUEST = fields_main2[6];
-                    this.TEK_PR_OTVET = Integer.parseInt(fields_main2[7]);
-                    this.TEK_PICT = fields_main2[8];
-                    this.TEK_HELP = fields_main2[9];
-                    this.PODSKAZKA = fields_main2[10];
-                    if (this.PODSKAZKA.length() == 0) {
-                        this.bVoprTic.setEnabled(false);
-                    } else if (this.INI_ENABLE_HINT) {
-                        this.bVoprTic.setEnabled(true);
+                    N_TICKET = Integer.parseInt(fields_main2[1]);
+                    N_QST = Integer.parseInt(fields_main2[2]);
+                    TEK_TICKET = Integer.parseInt(fields_main2[3]);
+                    TEK_QST_IN_TICKET = Integer.parseInt(fields_main2[4]);
+                    SELECTED_VARIANT_TICKETS = Integer.parseInt(fields_main2[5]);
+                    TEK_QUEST = fields_main2[6];
+                    TEK_PR_OTVET = Integer.parseInt(fields_main2[7]);
+                    TEK_PICT = fields_main2[8];
+                    TEK_HELP = fields_main2[9];
+                    PODSKAZKA = fields_main2[10];
+                    if (PODSKAZKA.length() == 0) {
+                        bVoprTic.setEnabled(false);
+                    } else if (INI_ENABLE_HINT) {
+                        bVoprTic.setEnabled(true);
                     } else {
-                        this.bVoprTic.setEnabled(false);
+                        bVoprTic.setEnabled(false);
                     }
-                    this.TEK_ALL_QST = Integer.parseInt(fields_main2[11]);
-                    this.TEK_TIME = Integer.parseInt(fields_main2[12]);
-                    if (this.FIRST) {
-                        this.OTVETS = new int[this.N_QST];
-                        this.MASS_PRAV = new int[this.N_QST];
-                        this.MASS_N_QST = new int[this.N_QST];
-                        this.MASS_PRESSED = new int[this.N_QST];
+                    TEK_ALL_QST = Integer.parseInt(fields_main2[11]);
+                    TEK_TIME = Integer.parseInt(fields_main2[12]);
+                    if (FIRST) {
+                        OTVETS = new int[N_QST];
+                        MASS_PRAV = new int[N_QST];
+                        MASS_N_QST = new int[N_QST];
+                        MASS_PRESSED = new int[N_QST];
                         Clear_Otvets();
-                        this.EXAMEN_BREAK_ON_TIME = false;
-                        if (this.TEK_TIME > 0) {
+                        EXAMEN_BREAK_ON_TIME = false;
+                        if (TEK_TIME > 0) {
                             start_timer();
                         }
                         this.FIRST = false;
@@ -698,7 +708,6 @@ public class etic extends Activity {
      */
     /* Code decompiled incorrectly, please refer to instructions dump. */
 
-
     public void set_ekran() {
         String WrStr;
         this.ZADERJKA_t = 0;
@@ -755,6 +764,15 @@ public class etic extends Activity {
                     this.tOtvetYesTic.setTextColor(this.blackColor);
                     break;
             }
+        }
+        setNomVopros();
+        if (this.TEK_PICT.length() == 0) {
+            this.vImageTic.setImageBitmap(null);
+            this.vImageTic.setBackgroundColor(this.backColor);
+        } else if (this.BROWSER_ERR) {
+            this.myService4.doSend("RI" + this.WORK_NUM + "," + Integer.toString(this.MASS_N_ERR_QST[this.TEK_QST_IN_TICKET - 1]));
+        } else {
+            this.myService4.doSend("EII," + Integer.toString(this.TEK_ALL_QST));
         }
     }
 

@@ -51,6 +51,15 @@ public class ExamServiceRX extends Service {
     public int size;
     Timer timer;
 
+
+
+//    ETE - Ошибка
+//    EKI - Ответ на вопрос
+//    EIN - Запрос на следующий вопрос
+
+
+
+
     public void onCreate() {
         if (!this.CREATED) {
             super.onCreate();
@@ -60,12 +69,11 @@ public class ExamServiceRX extends Service {
 
     public void doSend(String str) {
 
-        UniLog.Method("connected: "+ connect_yes);
+        UniLog.Method("connected: " + connect_yes);
         if (this.connect_yes) {
             try {
                 UniLog.onSend(str);
                 this.out.write(str.getBytes());
-
 
 
             } catch (IOException e) {
@@ -108,7 +116,6 @@ public class ExamServiceRX extends Service {
                 .subscribeOn(Schedulers.io())
                 .subscribe();
     }
-
 
 
     public void connect() {
@@ -165,58 +172,68 @@ public class ExamServiceRX extends Service {
     public void ReadingThread() {
         int length = 0;
         try {
-            this.size = this.f2in.available();
+            size = f2in.available();
         } catch (NullPointerException e) {
             e.printStackTrace();
         } catch (IOException e2) {
             e2.printStackTrace();
         }
-        if (this.size > 0) {
-            byte[] b = new byte[this.size];
-            try {
-                length = this.f2in.read(b);
-                if (length < 0) {
-                    throw new EOFException("Was got -1");
-                }
+        if (size <= 0) return;
 
-            } catch (IOException e3) {
-                e3.printStackTrace();
-                UniLog.error(e3.getMessage());
+        byte[] b = new byte[size];
+        try {
+            length = f2in.read(b);
+            if (length < 0) {
+                throw new EOFException("Was got -1");
             }
-            if (b[0] == 89) {
-                this.READIND_DATA = true;
-            }
-            if (!this.READIND_DATA) {
-                this.RAZMER = 0;
-                Intent intent = new Intent("com.econavt.uniexam");
-                intent.putExtra(MainActivity.PARAM_BUF, b);
-                sendBroadcast(intent);
-            } else if (this.RAZMER == 0) {
-                String[] Massiv2 = new String(b).split("#");
-                this.RAZMER_MAX = Integer.parseInt(Massiv2[1]);
-                int start = Massiv2[1].length() + 3;
-                int i = length - start;
-                this.END = i;
-                this.RAZMER = i;
-                this.f1im = new byte[this.RAZMER_MAX];
-                int i2 = 0;
-                while (i2 < this.RAZMER) {
-                    this.f1im[i2] = b[i2 + start];
-                    i2++;
-                }
-                this.END = i2;
-            } else {
-                this.RAZMER += length;
-                int i3 = this.END;
-                int j = 0;
-                while (i3 < this.END + length) {
-                    this.f1im[i3] = b[j];
-                    i3++;
-                    j++;
-                }
-                this.END = i3;
-            }
+
+        } catch (IOException e3) {
+            e3.printStackTrace();
+            UniLog.error(e3.getMessage());
         }
+
+
+        UniLog.print("b0 = " + b[0]);
+        UniLog.onReceived(b.length + "b " + new String(b));
+
+        if (b[0] == 89) {
+            READIND_DATA = true;
+        }
+
+
+
+        if (!READIND_DATA) {
+            RAZMER = 0;
+            Intent intent = new Intent("com.econavt.uniexam");
+            intent.putExtra(MainActivity.PARAM_BUF, b);
+            sendBroadcast(intent);
+        } else if (RAZMER == 0) {
+            UniLog.print("split input #");
+            String[] Massiv2 = new String(b).split("#");
+            RAZMER_MAX = Integer.parseInt(Massiv2[1]);
+            int start = Massiv2[1].length() + 3;
+            int i = length - start;
+            END = i;
+            RAZMER = i;
+            f1im = new byte[RAZMER_MAX];
+            int i2 = 0;
+            while (i2 < RAZMER) {
+                f1im[i2] = b[i2 + start];
+                i2++;
+            }
+            END = i2;
+        } else {
+            RAZMER += length;
+            int i3 = END;
+            int j = 0;
+            while (i3 < END + length) {
+                f1im[i3] = b[j];
+                i3++;
+                j++;
+            }
+            END = i3;
+        }
+
     }
 
     /* access modifiers changed from: package-private */
