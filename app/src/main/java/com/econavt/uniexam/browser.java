@@ -146,7 +146,7 @@ public class browser extends Activity {
         this.bNext = (ImageButton) findViewById(R.id.bNext);
         this.spinner1 = (Spinner) findViewById(R.id.spinner1);
         this.frameLayout1 = (FrameLayout) findViewById(R.id.frameLayout1);
-        this.frameLayout2 = (FrameLayout) findViewById(R.id.frameLayout2);
+        /*this.frameLayout2 = (FrameLayout) findViewById(R.id.frameLayout2);*/
         this.linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
         this.linearLayout2 = (LinearLayout) findViewById(R.id.linearLayout2);
         this.tVopros = (TextView) findViewById(R.id.tVopros);
@@ -1067,7 +1067,7 @@ public class browser extends Activity {
     }
 
     public void start1() {
-        int WrHeight = ((this.HEIGHT - this.frameLayout1.getHeight()) - this.frameLayout2.getHeight()) - this.linearLayout1.getHeight();
+      /*  int WrHeight = ((this.HEIGHT - this.frameLayout1.getHeight()) - this.frameLayout2.getHeight()) - this.linearLayout1.getHeight();
         int WrInt = (WrHeight - 30) / 3;
         this.chVar1.setHeight(WrInt / 2);
         this.chVar2.setHeight(WrInt / 2);
@@ -1090,20 +1090,20 @@ public class browser extends Activity {
         this.tVar4.setHeight(WrInt2);
         this.tVar5.setHeight(WrInt2);
         this.tVar6.setHeight(WrInt2);
-        int WrInt3 = ((WrHeight - this.linearLayout2.getHeight()) - this.tVoprMain.getHeight()) - 50;
+        int WrInt3 = ((WrHeight - this.linearLayout2.getHeight()) - this.tVoprMain.getHeight()) - 50;*/
         ViewGroup.LayoutParams params = this.vImage.getLayoutParams();
         params.height = this.IMAGE_HEIGHT;
-        int WrInt4 = (int) (((double) this.IMAGE_HEIGHT) * 1.5d);
-        params.width = WrInt4;
+     /*   int WrInt4 = (int) (((double) this.IMAGE_HEIGHT) * 1.5d);
+        params.width = WrInt4;*/
         this.vImage.setLayoutParams(params);
-        int WrWidth = (((this.WIDTH - WrInt4) - 40) / 2) - this.chVar1.getWidth();
+     /*   int WrWidth = (((this.WIDTH - WrInt4) - 40) / 2) - this.chVar1.getWidth();
         this.tVar1.setWidth(WrWidth);
         this.tVar2.setWidth(WrWidth);
         this.tVar3.setWidth(WrWidth);
         this.tVar4.setWidth(WrWidth);
         this.tVar5.setWidth(WrWidth);
         this.tVar6.setWidth(WrWidth);
-        int WrInt5 = (WrInt4 - this.tVopros.length()) / 2;
+        int WrInt5 = (WrInt4 - this.tVopros.length()) / 2;*/
         this.tOtvetYes.setTextColor(this.GreenText);
         if (this.HELP_YES) {
             this.bVopr.setEnabled(true);

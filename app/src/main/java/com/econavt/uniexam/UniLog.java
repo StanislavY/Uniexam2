@@ -5,7 +5,7 @@ class UniLog {
     private static String PREFIX = "UniLog: ";
 
     public static void print(Object message){
-        System.out.println(PREFIX + message);
+//        System.out.println(PREFIX + message);
     }
 
 

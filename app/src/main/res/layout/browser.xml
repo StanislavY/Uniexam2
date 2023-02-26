@@ -1,54 +1,621 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="8dp">
-    <FrameLayout android:id="@+id/frameLayout1" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <Spinner android:id="@+id/spinner1" android:scrollbars="vertical" android:clickable="true" android:layout_width="match_parent" android:layout_height="36dp"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    android:background="#F8F6FA">
+    <FrameLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/frameLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/spinner1"
+            android:scrollbars="vertical"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"/>
     </FrameLayout>
-    <FrameLayout android:id="@+id/frameLayout2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/frameLayout1">
-        <TextView android:textStyle="bold" android:id="@+id/tVopros" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="@string/sNumVoprBrowse"/>
-        <TextView android:textStyle="bold" android:layout_gravity="right" android:id="@+id/tVariant" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="300dp" android:text="@string/sVarOtveta"/>
-    </FrameLayout>
-    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar5" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="5" android:layout_below="@+id/tZap3B" android:layout_alignLeft="@+id/chVar4"/>
-    <TextView android:id="@+id/tZap4B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="T" android:layout_below="@+id/chVar5" android:layout_alignLeft="@+id/tZap3B"/>
-    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar6" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="6" android:layout_below="@+id/tZap4B" android:layout_alignLeft="@+id/chVar5"/>
-    <LinearLayout android:orientation="horizontal" android:id="@+id/linearLayout2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@+id/linearLayout1" android:layout_alignLeft="@+id/tVoprMain">
-        <TextView android:layout_gravity="center_vertical" android:id="@+id/tNumVoprBrowse" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="@string/sNumVoprBrowse"/>
-        <TextView android:textSize="16sp" android:textStyle="bold" android:layout_gravity="center_vertical" android:id="@+id/tOtvetYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="  "/>
-        <ImageButton android:id="@+id/bPrev" android:layout_width="60dp" android:layout_height="40dp" android:src="@drawable/prev"/>
-        <ImageButton android:id="@+id/bNext" android:layout_width="60dp" android:layout_height="40dp" android:src="@drawable/next"/>
-        <TextView android:layout_gravity="center_vertical" android:id="@+id/tAns" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="@string/sAnsw"/>
-        <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/tAnswer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="  "/>
-        <Button android:textSize="12sp" android:id="@+id/bOK" android:layout_width="50dp" android:layout_height="40dp" android:layout_marginLeft="20dp" android:text="OK"/>
-        <TextView android:layout_gravity="center_vertical" android:id="@+id/tNumTick" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="Билет: "/>
-        <TextView android:textStyle="bold" android:layout_gravity="center_vertical" android:id="@+id/tNumTicket" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="  "/>
-        <ImageButton android:id="@+id/iBuUpBrows" android:layout_width="60dp" android:layout_height="40dp" android:layout_marginLeft="60dp" android:src="@drawable/up"/>
-        <ImageButton android:id="@+id/iBuDownBrows" android:layout_width="60dp" android:layout_height="40dp" android:src="@drawable/down"/>
+
+
+
+    <!--<FrameLayout
+        app:layout_constraintTop_toBottomOf="@id/frameLayout1"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frameLayout1">-->
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/frameLayout1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/tVopros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:text="@string/sNumVoprBrowse"
+        android:textStyle="bold" />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/tVopros"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/tVoprMain"
+        android:layout_width="match_parent"
+        tools:text="какой-то очень интересный вопрос "
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        android:text="  " />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll"
+        app:layout_constraintTop_toBottomOf="@id/tVopros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="8"
+        >
+
+
+
+
+
+
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/image_and_answer_block"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            app:layout_constraintVertical_weight="5"
+            >
+
+
+            <ImageView
+                android:id="@+id/vImage"
+                android:layout_width="220dp"
+                android:layout_height="180dp"
+
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+
+            <TextView
+                android:id="@+id/tVariant"
+                app:layout_constraintStart_toEndOf="@id/vImage"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+
+                android:text="@string/sVarOtveta"
+                android:textStyle="bold" />
+
+
+
+
+
+
+
+
+
+
+
+            <CheckBox
+                android:id="@+id/chVar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+
+
+
+
+
+
+
+                app:layout_constraintStart_toEndOf="@id/vImage"
+                app:layout_constraintTop_toBottomOf="@id/tVariant"
+
+
+                />
+            <TextView
+                android:id="@+id/question_number1"
+                app:layout_constraintStart_toEndOf="@id/chVar1"
+                app:layout_constraintTop_toTopOf="@id/chVar1"
+                app:layout_constraintBottom_toBottomOf="@id/chVar1"
+
+                android:paddingStart="@dimen/questions_number_padding_browser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+
+
+                tools:text="1"/>
+
+            <TextView
+                android:id="@+id/tVar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/chVar1"
+
+
+                android:paddingStart="@dimen/padding_start_variants_text"
+                android:text="  "
+                app:layout_constraintBottom_toBottomOf="@id/question_number1"
+                app:layout_constraintStart_toEndOf="@id/question_number1"
+                app:layout_constraintTop_toTopOf="@id/question_number1"
+                tools:text="какой-то вариант ответаjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt" />
+
+            <TextView
+                android:id="@+id/tZap1B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+
+
+                app:layout_constraintTop_toBottomOf="@id/tVar1" />
+
+            <CheckBox
+
+                android:id="@+id/chVar2"
+                android:layout_marginTop="@dimen/margin_between_variants_browser"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/vImage"
+                app:layout_constraintTop_toBottomOf="@id/tZap1B"
+
+                />
+            <TextView
+                android:id="@+id/question_number2"
+                app:layout_constraintStart_toEndOf="@id/chVar2"
+                app:layout_constraintTop_toTopOf="@id/chVar2"
+                app:layout_constraintBottom_toBottomOf="@id/chVar2"
+
+                android:paddingStart="@dimen/questions_number_padding_browser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+
+
+                tools:text="2"/>
+
+            <TextView
+                android:id="@+id/tVar2"
+                android:text="какой-то вариант ответа"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/chVar2"
+                android:layout_toRightOf="@+id/chVar2"
+                android:paddingStart="@dimen/padding_start_variants_text"
+
+
+                app:layout_constraintBottom_toBottomOf="@id/question_number2"
+                app:layout_constraintStart_toEndOf="@id/question_number2"
+                app:layout_constraintTop_toTopOf="@id/question_number2"
+                tools:text="какой-то вариант ответа 2" />
+
+            <TextView
+
+                android:id="@+id/tZap2B"
+                android:layout_width="4dp"
+                android:layout_height="7dp"
+                android:layout_below="@+id/chVar2"
+                android:text="T"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+
+
+                app:layout_constraintTop_toBottomOf="@id/chVar2" />
+
+            <CheckBox
+
+
+                android:id="@+id/chVar3"
+                android:layout_marginTop="@dimen/margin_between_variants_browser"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/vImage"
+
+                app:layout_constraintTop_toBottomOf="@id/tZap2B" />
+            <TextView
+                android:id="@+id/question_number3"
+                app:layout_constraintStart_toEndOf="@id/chVar3"
+                app:layout_constraintTop_toTopOf="@id/chVar3"
+                app:layout_constraintBottom_toBottomOf="@id/chVar3"
+
+                android:paddingStart="@dimen/questions_number_padding_browser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+
+
+                tools:text="3"/>
+
+            <TextView
+                android:id="@+id/tVar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="@dimen/padding_start_variants_text"
+                android:text="  "
+                app:layout_constraintBottom_toBottomOf="@id/question_number3"
+
+
+                app:layout_constraintStart_toEndOf="@id/question_number3"
+                app:layout_constraintTop_toTopOf="@id/question_number3"
+
+                tools:text="какой-то вариант ответа 3" />
+
+            <TextView
+                android:id="@+id/tZap3B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"
+
+                app:layout_constraintTop_toBottomOf="@id/chVar3" />
+            <CheckBox
+                android:id="@+id/chVar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_variants_browser"
+                app:layout_constraintTop_toBottomOf="@id/tZap3B"
+                app:layout_constraintStart_toEndOf="@id/vImage"
+
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/question_number4"
+                app:layout_constraintStart_toEndOf="@id/chVar4"
+                app:layout_constraintTop_toTopOf="@id/chVar4"
+                app:layout_constraintBottom_toBottomOf="@id/chVar4"
+                android:paddingStart="@dimen/questions_number_padding_browser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                tools:text="4"/>
+            <TextView
+                android:id="@+id/tVar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/question_number4"
+                app:layout_constraintTop_toTopOf="@id/question_number4"
+                app:layout_constraintBottom_toBottomOf="@id/question_number4"
+                tools:text="какой-то вариант № 4"
+                android:paddingStart="@dimen/padding_start_variants_text"
+                android:text="  " />
+
+            <TextView
+                android:id="@+id/tZap4B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tVar4"
+                android:visibility="gone"
+
+                />
+
+            <CheckBox
+                android:id="@+id/chVar5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_variants_browser"
+
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/vImage"
+                app:layout_constraintTop_toBottomOf="@id/tZap4B"
+
+
+                />
+            <TextView
+                android:id="@+id/question_number5"
+                app:layout_constraintStart_toEndOf="@id/chVar5"
+                app:layout_constraintTop_toTopOf="@id/chVar5"
+                app:layout_constraintBottom_toBottomOf="@id/chVar5"
+                android:paddingStart="@dimen/questions_number_padding_browser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                tools:text="5"/>
+
+            <TextView
+
+                android:id="@+id/tVar5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_start_variants_text"
+                android:text="  "
+                app:layout_constraintBottom_toBottomOf="@id/question_number5"
+                app:layout_constraintStart_toEndOf="@id/question_number5"
+                app:layout_constraintTop_toTopOf="@id/question_number5"
+
+                tools:text="какой-то вариант № 5" />
+
+
+            <CheckBox
+                android:id="@+id/chVar6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_variants_browser"
+
+
+
+
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/vImage"
+                app:layout_constraintTop_toBottomOf="@id/chVar5"
+
+                >
+
+            </CheckBox>
+            <TextView
+                android:id="@+id/question_number6"
+                app:layout_constraintStart_toEndOf="@id/chVar6"
+                app:layout_constraintTop_toTopOf="@id/chVar6"
+                app:layout_constraintBottom_toBottomOf="@id/chVar6"
+
+                android:paddingStart="@dimen/questions_number_padding_browser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+
+
+                tools:text="6"/>
+
+            <TextView
+
+                android:id="@+id/tVar6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/chVar6"
+                android:layout_toRightOf="@+id/chVar6"
+                android:paddingStart="@dimen/padding_start_variants_text"
+                android:text="  "
+                app:layout_constraintBottom_toBottomOf="@id/question_number6"
+                app:layout_constraintStart_toEndOf="@id/question_number6"
+                app:layout_constraintTop_toTopOf="@id/question_number6"
+                tools:text="какой-то вариант № 6" />
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="2"
+
+
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toTopOf="@id/linearLayout1"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nested_scroll"
+        >
+
+        <TextView
+            android:id="@+id/tNumVoprBrowse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/sNumVoprBrowse" />
+
+        <TextView
+            android:id="@+id/tOtvetYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="  "
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/bPrev"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/prev" />
+
+        <ImageButton
+            android:id="@+id/bNext"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/next" />
+
+        <TextView
+            android:id="@+id/tAns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="@string/sAnsw" />
+
+        <TextView
+            android:id="@+id/tAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="  "
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bOK"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:text="OK"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tNumTick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="Билет: " />
+
+        <TextView
+            android:id="@+id/tNumTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="  "
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/iBuUpBrows"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/up" />
+
+        <ImageButton
+            android:id="@+id/iBuDownBrows"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/down" />
     </LinearLayout>
-    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar1" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:layout_marginRight="10dp" android:checked="false" android:text="1" android:layout_toRightOf="@+id/tVoprMain" android:layout_below="@+id/frameLayout2"/>
-    <TextView android:id="@+id/tZap1B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:text="T" android:layout_toRightOf="@+id/tVoprMain" android:layout_below="@+id/chVar1"/>
-    <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
-        <ImageButton android:id="@+id/bVopr" android:layout_width="60dp" android:layout_height="40dp" android:src="@drawable/vopr4"/>
-        <CheckBox android:id="@+id/chTems" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"/>
-        <TextView android:id="@+id/tRez" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sTems"/>
-        <CheckBox android:id="@+id/chTick" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/tNoAns" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sTickets"/>
-        <TextView android:id="@+id/tOtvets" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:text="@string/sOtvets"/>
-        <TextView android:id="@+id/tNOtvets" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="100"/>
-        <TextView android:id="@+id/tErrors" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="@string/sErrors"/>
-        <TextView android:id="@+id/tNErrors" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="100"/>
-        <Button android:textSize="12sp" android:id="@+id/bClear" android:layout_width="50dp" android:layout_height="40dp" android:layout_marginLeft="10dp" android:text="C"/>
-        <Button android:textSize="12sp" android:id="@+id/bStart" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginLeft="40dp" android:text="Выход"/>
+
+
+    <LinearLayout
+
+
+
+        android:id="@+id/linearLayout1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="2"
+
+
+
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/bVopr"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/vopr4" />
+
+        <CheckBox
+            android:id="@+id/chTems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/tRez"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sTems" />
+
+        <CheckBox
+            android:id="@+id/chTick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tNoAns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sTickets" />
+
+        <TextView
+            android:id="@+id/tOtvets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="@string/sOtvets" />
+
+        <TextView
+            android:id="@+id/tNOtvets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="100" />
+
+        <TextView
+            android:id="@+id/tErrors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/sErrors" />
+
+        <TextView
+            android:id="@+id/tNErrors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="100" />
+
+        <Button
+            android:id="@+id/bClear"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="C"
+
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/bStart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="60dp"
+            android:text="Выход"
+            android:textSize="12sp" />
     </LinearLayout>
-    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar2" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="2" android:layout_below="@+id/tZap1B" android:layout_alignLeft="@+id/chVar1"/>
-    <TextView android:id="@+id/tZap2B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:text="T" android:layout_toRightOf="@+id/tVoprMain" android:layout_below="@+id/chVar2"/>
-    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar3" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="3" android:layout_below="@+id/tZap2B" android:layout_alignLeft="@+id/chVar2"/>
-    <TextView android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:id="@+id/tVoprMain" android:scrollbars="vertical" android:layout_width="250dp" android:layout_height="85dp" android:text="  " android:height="50dp" android:layout_below="@+id/frameLayout2" android:layout_alignParentLeft="true"/>
-    <TextView android:id="@+id/tVar1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar1" android:layout_alignBaseline="@+id/chVar1"/>
-    <TextView android:id="@+id/tVar3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar3" android:layout_alignBaseline="@+id/chVar3" android:layout_centerHorizontal="true"/>
-    <CheckBox android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:textStyle="bold" android:gravity="top" android:id="@+id/chVar4" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="4" android:layout_toRightOf="@+id/tVar3" android:layout_below="@+id/frameLayout2"/>
-    <TextView android:id="@+id/tZap3B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="T" android:layout_toRightOf="@+id/tVar1" android:layout_below="@+id/chVar4"/>
-    <TextView android:id="@+id/tVar5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar5" android:layout_alignBaseline="@+id/chVar5"/>
-    <TextView android:id="@+id/tVar4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar4" android:layout_alignBaseline="@+id/chVar4"/>
-    <TextView android:id="@+id/tVar6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar6" android:layout_alignBaseline="@+id/chVar6"/>
-    <TextView android:id="@+id/tVar2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  " android:layout_toRightOf="@+id/chVar2" android:layout_alignBaseline="@+id/chVar2"/>
-    <ImageView android:id="@+id/vImage" android:layout_width="220dp" android:layout_height="180dp" android:layout_marginTop="10dp" android:scaleType="fitCenter" android:layout_below="@+id/tVoprMain" android:layout_alignParentLeft="true"/>
-</RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
