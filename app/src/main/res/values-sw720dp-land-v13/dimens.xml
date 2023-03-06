@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="activity_horizontal_margin">128dp</dimen>
-    <dimen name="padding_start_variants_text">2dp</dimen>
-    <dimen name="questions_number_padding_browser">5dp</dimen>
-    <dimen name="margin_between_variants_browser">10dp</dimen>
+
+
 </resources>

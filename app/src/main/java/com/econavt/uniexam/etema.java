@@ -173,8 +173,8 @@ public class etema extends Activity {
         this.bVoprTem = (ImageButton) findViewById(R.id.bVoprTem);
         this.bPrevTem = (ImageButton) findViewById(R.id.bPrevTem);
         this.bNextTem = (ImageButton) findViewById(R.id.bNextTem);
-        this.frameLayout1Tem = (FrameLayout) findViewById(R.id.frameLayout1Tem);
-        this.frameLayout2Tem = (FrameLayout) findViewById(R.id.frameLayout2Tem);
+       /* this.frameLayout1Tem = (FrameLayout) findViewById(R.id.frameLayout1Tem);
+        this.frameLayout2Tem = (FrameLayout) findViewById(R.id.frameLayout2Tem);*/
         this.linearLayout1Tem = (LinearLayout) findViewById(R.id.linearLayout1Tem);
         this.linearLayout2Tem = (LinearLayout) findViewById(R.id.linearLayout2Tem);
         this.tTema = (TextView) findViewById(R.id.tTema);
@@ -422,6 +422,8 @@ public class etema extends Activity {
                 etema.this.bound = false;
             }
         };
+
+
     }
 
     /* access modifiers changed from: package-private */
@@ -1361,7 +1363,7 @@ public class etema extends Activity {
     }
 
     public void start1() {
-        int WrHeight = ((this.HEIGHT - this.frameLayout1Tem.getHeight()) - this.frameLayout2Tem.getHeight()) - this.linearLayout1Tem.getHeight();
+       /* int WrHeight = ((this.HEIGHT - this.frameLayout1Tem.getHeight()) - this.frameLayout2Tem.getHeight()) - this.linearLayout1Tem.getHeight();
         int WrInt = (WrHeight - 30) / 3;
         this.chVar1Tem.setHeight(WrInt / 2);
         this.chVar2Tem.setHeight(WrInt / 2);
@@ -1397,7 +1399,7 @@ public class etema extends Activity {
         this.tVar4Tem.setWidth(WrWidth);
         this.tVar5Tem.setWidth(WrWidth);
         this.tVar6Tem.setWidth(WrWidth);
-        int WrInt5 = (WrInt4 - this.tVoprosTem.length()) / 2;
+        int WrInt5 = (WrInt4 - this.tVoprosTem.length()) / 2;*/
         this.tVar1Tem.setText("");
         if (this.INI_SHOW_REZ) {
             this.tOtvetYesTem.setTextColor(this.GreenText);

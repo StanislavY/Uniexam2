@@ -123,6 +123,13 @@ public class etic extends Activity {
     int redColor = -5636096;
     ServiceConnection sConn4;
     SharedPreferences sPref;
+    TextView questionNumber1;
+    TextView questionNumber2;
+    TextView questionNumber3;
+    TextView questionNumber4;
+    TextView questionNumber5;
+    TextView questionNumber6;
+
     TextView tAnswerTic;
     TextView tErrorsTic;
     TextView tNErrorsTic;
@@ -163,9 +170,16 @@ public class etic extends Activity {
         this.bVoprTic = (ImageButton) findViewById(R.id.bVoprTic);
         this.bPrevTic = (ImageButton) findViewById(R.id.bPrevTic);
         this.bNextTic = (ImageButton) findViewById(R.id.bNextTic);
-        this.frameLayout2Tic = (FrameLayout) findViewById(R.id.frameLayout2Tic);
+        /*this.frameLayout2Tic = (FrameLayout) findViewById(R.id.frameLayout2Tic);*/
         this.linearLayout1Tic = (LinearLayout) findViewById(R.id.linearLayout1Tic);
         this.linearLayout2Tic = (LinearLayout) findViewById(R.id.linearLayout2Tic);
+        this.questionNumber1 = (TextView) findViewById(R.id.question_number1);
+        this.questionNumber2 = (TextView) findViewById(R.id.question_number2);
+        this.questionNumber3 = (TextView) findViewById(R.id.question_number3);
+        this.questionNumber4 = (TextView) findViewById(R.id.question_number4);
+        this.questionNumber5 = (TextView) findViewById(R.id.question_number5);
+        this.questionNumber6 = (TextView) findViewById(R.id.question_number6);
+
         this.tVoprosTic = (TextView) findViewById(R.id.tVoprosTic);
         this.tVariantTic = (TextView) findViewById(R.id.tVariantTic);
         this.tVoprMainTic = (TextView) findViewById(R.id.tVoprMainTic);
@@ -361,13 +375,13 @@ public class etic extends Activity {
         this.pauza_t = this.sPref.getInt("pauza_t", 5);
         this.WORK_HEIGTH = this.sPref.getInt("FontSize", 10);
         this.IMAGE_HEIGHT = this.sPref.getInt("ImageHeight", 235);
-        this.tVoprMainTic.setTextSize((float) this.WORK_HEIGTH);
+      /*  this.tVoprMainTic.setTextSize((float) this.WORK_HEIGTH);
         this.tVar1Tic.setTextSize((float) this.WORK_HEIGTH);
         this.tVar2Tic.setTextSize((float) this.WORK_HEIGTH);
         this.tVar3Tic.setTextSize((float) this.WORK_HEIGTH);
         this.tVar4Tic.setTextSize((float) this.WORK_HEIGTH);
         this.tVar5Tic.setTextSize((float) this.WORK_HEIGTH);
-        this.tVar6Tic.setTextSize((float) this.WORK_HEIGTH);
+        this.tVar6Tic.setTextSize((float) this.WORK_HEIGTH);*/
         getActionBar().setDisplayShowHomeEnabled(false);
         getActionBar().hide();
         set_timer1();
@@ -407,6 +421,8 @@ public class etic extends Activity {
                 etic.this.bound = false;
             }
         };
+
+
     }
 
 
@@ -480,13 +496,14 @@ public class etic extends Activity {
         this.pauza_t = this.sPref.getInt("pauza_t", 5);
         this.WORK_HEIGTH = this.sPref.getInt("FontSize", 10);
         this.IMAGE_HEIGHT = this.sPref.getInt("ImageHeight", 235);
-        this.tVoprMainTic.setTextSize((float) this.WORK_HEIGTH);
-        this.tVar1Tic.setTextSize((float) this.WORK_HEIGTH);
+       /* this.tVoprMainTic.setTextSize((float) this.WORK_HEIGTH);*/
+       /* this.tVar1Tic.setTextSize((float) this.WORK_HEIGTH);
         this.tVar2Tic.setTextSize((float) this.WORK_HEIGTH);
         this.tVar3Tic.setTextSize((float) this.WORK_HEIGTH);
         this.tVar4Tic.setTextSize((float) this.WORK_HEIGTH);
         this.tVar5Tic.setTextSize((float) this.WORK_HEIGTH);
-        this.tVar6Tic.setTextSize((float) this.WORK_HEIGTH);
+        this.tVar6Tic.setTextSize((float) this.WORK_HEIGTH);*/
+
     }
 
     public void set_comand(String str) {
@@ -742,6 +759,9 @@ public class etic extends Activity {
         this.tVar2Tic.setText(this.TEK_MAS_OTVET[1]);
         this.tVar1Tic.setText(this.TEK_MAS_OTVET[0]);
         this.tOtvetYesTic.setText(String.valueOf(Integer.toString(this.TEK_QST_IN_TICKET)) + " из " + Integer.toString(this.N_QST));
+
+
+
         if (this.BROWSER_ERR) {
             int WrInt = this.MASS_ERR_PRESSED[this.TEK_QST_IN_TICKET - 1];
             if (WrInt == 0) {
@@ -773,6 +793,25 @@ public class etic extends Activity {
             this.myService4.doSendRX("RI" + this.WORK_NUM + "," + Integer.toString(this.MASS_N_ERR_QST[this.TEK_QST_IN_TICKET - 1]));
         } else {
             this.myService4.doSendRX("EII," + Integer.toString(this.TEK_ALL_QST));
+        }
+        if (tVar1Tic.getText() == "") {
+            questionNumber1.setVisibility(View.GONE);
+        }
+        if (tVar2Tic.getText() == "") {
+            questionNumber2.setVisibility(View.GONE);
+
+        }
+        if (tVar3Tic.getText() == "") {
+            questionNumber3.setVisibility(View.GONE);
+        }
+        if (tVar4Tic.getText() == "") {
+            questionNumber4.setVisibility(View.GONE);
+        }
+        if (tVar5Tic.getText() == "") {
+            questionNumber5.setVisibility(View.GONE);
+        }
+        if (tVar6Tic.getText() == "") {
+            questionNumber6.setVisibility(View.GONE);
         }
     }
 
@@ -1389,7 +1428,7 @@ public class etic extends Activity {
     }
 
     public void start1() {
-        int WrHeight = (this.HEIGHT - this.frameLayout2Tic.getHeight()) - this.linearLayout1Tic.getHeight();
+      /*  int WrHeight = (this.HEIGHT - this.frameLayout2Tic.getHeight()) - this.linearLayout1Tic.getHeight();
         int WrInt = (WrHeight - 30) / 3;
         this.chVar1Tic.setHeight(WrInt / 2);
         this.chVar2Tic.setHeight(WrInt / 2);
@@ -1425,7 +1464,7 @@ public class etic extends Activity {
         this.tVar4Tic.setWidth(WrWidth);
         this.tVar5Tic.setWidth(WrWidth);
         this.tVar6Tic.setWidth(WrWidth);
-        int WrInt5 = (WrInt4 - this.tVoprosTic.length()) / 2;
+        int WrInt5 = (WrInt4 - this.tVoprosTic.length()) / 2;*/
         this.tVar1Tic.setText(" ");
         if (this.HELP_YES) {
             this.bVoprTic.setEnabled(true);
