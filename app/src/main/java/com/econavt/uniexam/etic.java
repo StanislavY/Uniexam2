@@ -736,24 +736,34 @@ public class etic extends Activity {
         this.chVar4Tic.setVisibility(View.INVISIBLE);
         this.chVar5Tic.setVisibility(View.INVISIBLE);
         this.chVar6Tic.setVisibility(View.INVISIBLE);
+        questionNumber3.setVisibility(View.INVISIBLE);
+        questionNumber4.setVisibility(View.INVISIBLE);
+        questionNumber5.setVisibility(View.INVISIBLE);
+        questionNumber6.setVisibility(View.INVISIBLE);
         this.tVoprMainTic.setText(this.TEK_QUEST);
         switch (this.TEK_NUM_VAR_OTVETOV) {
             case 6:
                 this.tVar6Tic.setVisibility(View.VISIBLE);
                 this.chVar6Tic.setVisibility(View.VISIBLE);
                 this.tVar6Tic.setText(this.TEK_MAS_OTVET[5]);
+
+                    questionNumber6.setVisibility(View.VISIBLE);
+
             case 5:
                 this.tVar5Tic.setVisibility(View.VISIBLE);
                 this.chVar5Tic.setVisibility(View.VISIBLE);
                 this.tVar5Tic.setText(this.TEK_MAS_OTVET[4]);
+                questionNumber5.setVisibility(View.VISIBLE);
             case 4:
                 this.tVar4Tic.setVisibility(View.VISIBLE);
                 this.chVar4Tic.setVisibility(View.VISIBLE);
                 this.tVar4Tic.setText(this.TEK_MAS_OTVET[3]);
+                questionNumber4.setVisibility(View.VISIBLE);
             case 3:
                 this.tVar3Tic.setVisibility(View.VISIBLE);
                 this.chVar3Tic.setVisibility(View.VISIBLE);
                 this.tVar3Tic.setText(this.TEK_MAS_OTVET[2]);
+                questionNumber3.setVisibility(View.VISIBLE);
                 break;
         }
         this.tVar2Tic.setText(this.TEK_MAS_OTVET[1]);
@@ -794,25 +804,17 @@ public class etic extends Activity {
         } else {
             this.myService4.doSendRX("EII," + Integer.toString(this.TEK_ALL_QST));
         }
-        if (tVar1Tic.getText() == "") {
+       /* if (chVar1Tic.getVisibility()==View.INVISIBLE) {
             questionNumber1.setVisibility(View.GONE);
         }
-        if (tVar2Tic.getText() == "") {
+        if (chVar2Tic.getVisibility()==View.INVISIBLE) {
             questionNumber2.setVisibility(View.GONE);
 
         }
-        if (tVar3Tic.getText() == "") {
-            questionNumber3.setVisibility(View.GONE);
-        }
-        if (tVar4Tic.getText() == "") {
-            questionNumber4.setVisibility(View.GONE);
-        }
-        if (tVar5Tic.getText() == "") {
-            questionNumber5.setVisibility(View.GONE);
-        }
-        if (tVar6Tic.getText() == "") {
-            questionNumber6.setVisibility(View.GONE);
-        }
+*/
+
+
+
     }
 
     public void set_ekranOld() {

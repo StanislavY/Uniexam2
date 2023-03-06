@@ -463,6 +463,7 @@
                 app:layout_constraintTop_toTopOf="@id/question_number5"
                 android:textSize="@dimen/text_size_main"
                 android:textColor="@color/text_color_gray"
+                android:paddingStart="@dimen/padding_start_variants_text"
 
                 tools:text="какой-то вариант № 5"
                 />
