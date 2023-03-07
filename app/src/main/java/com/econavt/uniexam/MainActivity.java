@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
                         MainActivity.this.Sett_2();
                         return;
                     case R.id.bHelp:
-                        MainActivity.this.Browse(1);
+                        MainActivity.this.Browse(2);
                         return;
                     case R.id.bStart:
                         MainActivity.this.StartStop();
