@@ -121,15 +121,23 @@
         android:layout_height="0dp"
 
         >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        <ImageView
-            android:id="@+id/vImageTic"
-            android:layout_width="220dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="4dp"
-            android:paddingTop="4dp"
-            android:scaleType="fitCenter"
-            />
+            >
+            <ImageView
+
+                android:id="@+id/vImageTic"
+                android:layout_width="220dp"
+                android:layout_height="180dp"
+                android:paddingTop="4dp"
+                android:layout_marginTop="@dimen/maggin_top_for_image_and_1_line_etic"
+
+
+                />
+
+
 
 
 
@@ -138,9 +146,9 @@
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            app:layout_constraintVertical_weight="5"
-            >
+            android:layout_marginTop="@dimen/margin_top_answer_block"
+            app:layout_constraintVertical_weight="5">
+
             <ImageView
                 android:id="@+id/vImageTicContainer"
                 android:layout_width="250dp"
@@ -151,27 +159,26 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-
             <TextView
                 android:id="@+id/tVariantTic"
-                app:layout_constraintStart_toEndOf="@id/vImageTicContainer"
-                app:layout_constraintTop_toTopOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-
                 android:text="@string/sVarOtveta"
                 android:textStyle="bold"
-                android:visibility="gone"/>
+
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@id/vImageTicContainer"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/line_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/vImageTicContainer"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vImageTicContainer"
+                app:layout_constraintTop_toTopOf="parent"
 
                 >
 
@@ -179,7 +186,6 @@
                     android:id="@+id/item1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-
 
 
                     android:layout_weight="1"
@@ -191,58 +197,54 @@
                         android:layout_height="@dimen/check_box_width"
 
 
-                        android:button="@null"
                         android:background="?android:attr/listChoiceIndicatorMultiple"
-
+                        android:button="@null"
 
 
                         android:checked="false"
 
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/question_number1"
-                        android:paddingTop="@dimen/paddingtop_question_number"
-
-
-
-                        android:paddingStart="@dimen/questions_number_padding_browser"
                         android:layout_width="wrap_content"
+
+
                         android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/questions_number_padding_browser"
+                        android:paddingTop="@dimen/paddingtop_question_number"
                         android:text="1"
-                        android:textSize="@dimen/text_size_for_question_number"
                         android:textColor="@color/text_colour_for_number_question"
+                        android:textSize="@dimen/text_size_for_question_number"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/chVar1Tic"
                         app:layout_constraintTop_toTopOf="parent"
 
 
+                        tools:text="1" />
 
-
-                        tools:text="1"/>
                     <TextView
                         android:id="@+id/tVar1Tic"
-                        android:paddingStart="@dimen/padding_start_variants_text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        app:layout_constraintStart_toEndOf="@id/question_number1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:paddingTop="@dimen/margin_text_question"
-
-
-                        android:textSize="@dimen/text_size_main"
-                        android:textColor="@color/text_color_gray"
                         android:layout_gravity="top"
+                        android:paddingStart="@dimen/padding_start_variants_text"
+                        android:paddingTop="@dimen/margin_text_question"
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="@dimen/text_size_main"
+
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/question_number1"
+                        app:layout_constraintTop_toTopOf="parent"
 
 
                         tools:text="какой-то вариант ответа"
 
 
-
                         />
+
                     <TextView
                         android:id="@+id/tZap1"
                         android:layout_width="wrap_content"
@@ -253,85 +255,82 @@
                         app:layout_constraintStart_toStartOf="parent"
 
 
-                        app:layout_constraintTop_toBottomOf="@id/tVar1Tic"/>
+                        app:layout_constraintTop_toBottomOf="@id/tVar1Tic" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/item4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                >
-                <CheckBox
-
-                    android:id="@+id/chVar4Tic"
-                    android:textColor="@color/main_background_color"
-                    android:layout_marginTop="@dimen/margin_between_variants_browser"
-                    android:layout_width="@dimen/check_box_width"
-                    android:layout_height="@dimen/check_box_width"
-
-                    android:background="?android:attr/listChoiceIndicatorMultiple"
-
-                    android:button="@null"
-
-
-                    android:textStyle="bold"
-
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-
-
-                    />
-
-
-                <TextView
-                    android:id="@+id/question_number4"
-                    app:layout_constraintStart_toEndOf="@id/chVar4Tic"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:paddingTop="@dimen/paddingtop_question_number"
-                    android:paddingStart="@dimen/questions_number_padding_browser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_colour_for_number_question"
-                    android:text="4"
-                    android:textSize="@dimen/text_size_for_question_number"
-                    android:textStyle="bold"
-                    tools:text="4"/>
-
-                <TextView
-                    android:id="@+id/tVar4Tic"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/item4"
                     android:layout_width="0dp"
-                    android:paddingTop="@dimen/margin_text_question"
-
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-                    tools:text="какой-то текст"
-                    android:textSize="@dimen/text_size_main"
-                    android:textColor="@color/text_color_gray"
-                    android:paddingStart="@dimen/padding_start_variants_text"
-                    app:layout_constraintStart_toEndOf="@id/question_number4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    <CheckBox
 
-                    />
-                <TextView
-                    android:id="@+id/tZap4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="T"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                        android:id="@+id/chVar4Tic"
+                        android:layout_width="@dimen/check_box_width"
+                        android:layout_height="@dimen/check_box_width"
+                        android:layout_marginTop="@dimen/margin_between_variants_browser"
+                        android:background="?android:attr/listChoiceIndicatorMultiple"
 
-                    android:visibility="gone"
-                    />
+                        android:button="@null"
+
+                        android:textColor="@color/main_background_color"
 
 
+                        android:textStyle="bold"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
 
 
+                        />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/question_number4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/questions_number_padding_browser"
+                        android:paddingTop="@dimen/paddingtop_question_number"
+                        android:text="4"
+                        android:textColor="@color/text_colour_for_number_question"
+                        android:textSize="@dimen/text_size_for_question_number"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/chVar4Tic"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tVar4Tic"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:paddingStart="@dimen/padding_start_variants_text"
+
+                        android:paddingTop="@dimen/margin_text_question"
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="@dimen/text_size_main"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/question_number4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="какой-то текст"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tZap4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
 
@@ -340,49 +339,49 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/line_1"
-                app:layout_constraintStart_toEndOf="@id/vImageTicContainer"
                 app:layout_constraintEnd_toEndOf="parent"
-                >
+                app:layout_constraintStart_toEndOf="@id/vImageTicContainer"
+                app:layout_constraintTop_toBottomOf="@id/line_1">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/item2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                   android:layout_weight="1"
+                    android:layout_weight="1"
 
                     android:orientation="horizontal">
+
                     <CheckBox
                         android:id="@+id/chVar2Tic"
 
 
-                        android:layout_marginTop="@dimen/margin_between_variants_browser"
-                        android:background="?android:attr/listChoiceIndicatorMultiple"
-
                         android:layout_width="@dimen/check_box_width"
                         android:layout_height="@dimen/check_box_width"
 
+                        android:layout_marginTop="@dimen/margin_between_variants_browser"
+                        android:background="?android:attr/listChoiceIndicatorMultiple"
+
                         android:button="@null"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
                     <TextView
                         android:id="@+id/question_number2"
-                        app:layout_constraintStart_toEndOf="@id/chVar2Tic"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:paddingTop="@dimen/paddingtop_question_number"
-
-                        android:paddingStart="@dimen/questions_number_padding_browser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/text_colour_for_number_question"
+                        android:paddingStart="@dimen/questions_number_padding_browser"
+
+                        android:paddingTop="@dimen/paddingtop_question_number"
                         android:text="2"
+                        android:textColor="@color/text_colour_for_number_question"
                         android:textSize="@dimen/text_size_for_question_number"
                         android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/chVar2Tic"
+                        app:layout_constraintTop_toTopOf="parent"
 
 
-                        tools:text="2"/>
+                        tools:text="2" />
 
                     <TextView
                         android:id="@+id/tVar2Tic"
@@ -391,16 +390,14 @@
                         android:paddingStart="@dimen/padding_start_variants_text"
                         android:paddingTop="@dimen/margin_text_question"
 
-                        android:textSize="@dimen/text_size_main"
                         android:textColor="@color/text_color_gray"
-                        app:layout_constraintStart_toEndOf="@id/question_number2"
+                        android:textSize="@dimen/text_size_main"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/question_number2"
                         app:layout_constraintTop_toTopOf="parent"
 
 
-
                         tools:text="какой-то вариант ответа 2"
-
 
 
                         />
@@ -410,14 +407,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/chVar2Tic"
+                        android:visibility="gone"
+
+
                         app:layout_constraintStart_toStartOf="parent"
 
-
-                        app:layout_constraintTop_toBottomOf="@id/chVar2Tic"
-
-                        android:visibility="gone" />
-
-
+                        app:layout_constraintTop_toBottomOf="@id/chVar2Tic" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -427,28 +422,21 @@
                     android:id="@+id/item5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_weight="1"
-                    >
+                    android:orientation="horizontal">
 
                     <CheckBox
 
 
-
-
-
-
-
                         android:id="@+id/chVar5Tic"
-                        android:textColor="@color/main_background_color"
-
                         android:layout_width="@dimen/check_box_width"
+
                         android:layout_height="@dimen/check_box_width"
-
-
-
                         android:background="?android:attr/listChoiceIndicatorMultiple"
+
+
                         android:button="@null"
+                        android:textColor="@color/main_background_color"
 
 
                         android:textStyle="bold"
@@ -458,51 +446,38 @@
                         />
 
 
-
                     <TextView
                         android:id="@+id/question_number5"
-                        android:textColor="@color/text_colour_for_number_question"
-                        app:layout_constraintStart_toEndOf="@id/chVar5Tic"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:paddingTop="@dimen/paddingtop_question_number"
-                        android:paddingStart="@dimen/questions_number_padding_browser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/questions_number_padding_browser"
+                        android:paddingTop="@dimen/paddingtop_question_number"
+                        android:text="5"
+                        android:textColor="@color/text_colour_for_number_question"
                         android:textSize="@dimen/text_size_for_question_number"
                         android:textStyle="bold"
-                        android:text="5"
-                        tools:text="5"/>
+                        app:layout_constraintStart_toEndOf="@id/chVar5Tic"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="5" />
 
                     <TextView
                         android:id="@+id/tVar5Tic"
-                        app:layout_constraintStart_toEndOf="@id/question_number5"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/margin_text_question"
-
-                        android:textSize="@dimen/text_size_main"
-                        android:textColor="@color/text_color_gray"
                         android:paddingStart="@dimen/padding_start_variants_text"
+                        android:paddingTop="@dimen/margin_text_question"
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="@dimen/text_size_main"
 
-                        tools:text="какой то вариант № 5"
-                        />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/question_number5"
+                        app:layout_constraintTop_toTopOf="parent"
 
-
-
-
-
-
-
-
-
-
+                        tools:text="какой то вариант № 5" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
-
 
 
             <LinearLayout
@@ -510,9 +485,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/line_2"
-                app:layout_constraintStart_toEndOf="@id/vImageTicContainer"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vImageTicContainer"
+                app:layout_constraintTop_toBottomOf="@id/line_2"
 
                 >
 
@@ -527,43 +502,38 @@
                     <CheckBox
                         android:id="@+id/chVar3Tic"
 
-                        android:textColor="@color/main_background_color"
-
                         android:layout_width="@dimen/check_box_width"
+
                         android:layout_height="@dimen/check_box_width"
                         android:background="?android:attr/listChoiceIndicatorMultiple"
-
                         android:button="@null"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
 
-
-
-
+                        android:textColor="@color/main_background_color"
                         android:textStyle="bold"
-                       />
+                        app:layout_constraintStart_toStartOf="parent"
 
 
-
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
                     <TextView
                         android:id="@+id/question_number3"
-                        android:paddingTop="@dimen/paddingtop_question_number"
-
-
-                        android:paddingStart="@dimen/questions_number_padding_browser"
                         android:layout_width="wrap_content"
+
+
                         android:layout_height="wrap_content"
-                        android:textColor="@color/text_colour_for_number_question"
+                        android:paddingStart="@dimen/questions_number_padding_browser"
+                        android:paddingTop="@dimen/paddingtop_question_number"
                         android:text="3"
+                        android:textColor="@color/text_colour_for_number_question"
                         android:textSize="@dimen/text_size_for_question_number"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/chVar3Tic"
                         app:layout_constraintTop_toTopOf="parent"
 
 
-                        tools:text="3"/>
+                        tools:text="3" />
+
                     <TextView
                         android:id="@+id/tVar3Tic"
 
@@ -571,12 +541,12 @@
                         android:layout_height="wrap_content"
 
                         android:paddingStart="@dimen/padding_start_variants_text"
-                        android:textSize="@dimen/text_size_main"
-                        android:textColor="@color/text_color_gray"
                         android:paddingTop="@dimen/margin_text_question"
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="@dimen/text_size_main"
 
-                        app:layout_constraintStart_toEndOf="@id/question_number3"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/question_number3"
                         app:layout_constraintTop_toTopOf="parent"
 
                         tools:text="какой-то вариант ответа 3" />
@@ -586,12 +556,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
-                        app:layout_constraintStart_toStartOf="parent"
                         android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
 
                         app:layout_constraintTop_toBottomOf="@id/chVar3Tic" />
-
-
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -601,24 +569,22 @@
                     android:id="@+id/item6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_weight="1"
-                    >
+                    android:orientation="horizontal">
 
                     <CheckBox
 
 
-
                         android:id="@+id/chVar6Tic"
-                        android:textColor="@color/main_background_color"
-                        android:layout_marginTop="@dimen/margin_between_variants_browser"
-
                         android:layout_width="@dimen/check_box_width"
                         android:layout_height="@dimen/check_box_width"
 
-
+                        android:layout_marginTop="@dimen/margin_between_variants_browser"
                         android:background="?android:attr/listChoiceIndicatorMultiple"
+
+
                         android:button="@null"
+                        android:textColor="@color/main_background_color"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -629,43 +595,36 @@
 
                     <TextView
                         android:id="@+id/question_number6"
-                        android:paddingTop="@dimen/paddingtop_question_number"
-                        app:layout_constraintStart_toEndOf="@id/chVar6Tic"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:textColor="@color/text_colour_for_number_question"
-
-                        android:paddingStart="@dimen/questions_number_padding_browser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/questions_number_padding_browser"
+                        android:paddingTop="@dimen/paddingtop_question_number"
+
                         android:text="6"
+                        android:textColor="@color/text_colour_for_number_question"
                         android:textSize="@dimen/text_size_for_question_number"
                         android:textStyle="bold"
-                        tools:text="6"/>
+                        app:layout_constraintStart_toEndOf="@id/chVar6Tic"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="6" />
 
                     <TextView
                         android:id="@+id/tVar6Tic"
-                        android:paddingTop="@dimen/margin_text_question"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingStart="@dimen/padding_start_variants_text"
+                        android:paddingTop="@dimen/margin_text_question"
 
                         android:textColor="@color/text_color_gray"
                         android:textSize="@dimen/text_size_main"
-                        app:layout_constraintStart_toEndOf="@id/question_number6"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/question_number6"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="Может" />
 
 
-
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
-
-
-
-
-
 
 
             <!--
@@ -680,6 +639,7 @@
             -->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
     </FrameLayout>
 
     <LinearLayout

@@ -14,4 +14,6 @@
     <dimen name="text_size_for_question_number">28sp</dimen>
     <dimen name="margin_text_question">10dp</dimen>
     <dimen name="paddingtop_question_number">5dp</dimen>
+    <dimen name="maggin_top_for_image_and_1_line_etic">13dp</dimen>
+    <dimen name="margin_top_answer_block">13dp</dimen>
 </resources>

@@ -1,5 +1,7 @@
 package com.econavt.uniexam;
 
+import static android.view.Gravity.TOP;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -12,6 +14,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -33,6 +36,7 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.view.MotionEventCompat;
 
 public class etic extends Activity {
@@ -464,6 +468,7 @@ public class etic extends Activity {
 
 
     /* access modifiers changed from: package-private */
+
     public void click_im() {
         int WrY;
         ViewGroup.LayoutParams params = this.vImageTic.getLayoutParams();
@@ -477,7 +482,10 @@ public class etic extends Activity {
         params.height = WrY;
         params.width = (int) (((double) WrY) * 1.5d);
         this.vImageTic.setLayoutParams(params);
+
         this.vImageTic.bringToFront();
+
+
     }
 
     /* access modifiers changed from: protected */
