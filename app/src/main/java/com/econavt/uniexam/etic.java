@@ -475,12 +475,14 @@ public class etic extends Activity {
         if (this.Set_ImTic) {
             this.Set_ImTic = false;
             WrY = this.HEIGHT;
+            params.width = (int) (((double) WrY) * 1.5d);
         } else {
             this.Set_ImTic = true;
             WrY = this.IMAGE_HEIGHT;
+            params.width = (int) (((double) 250) );
         }
         params.height = WrY;
-        params.width = (int) (((double) WrY) * 1.5d);
+       /* params.width = (int) (((double) WrY) * 1.5d);*/
         this.vImageTic.setLayoutParams(params);
 
         this.vImageTic.bringToFront();
