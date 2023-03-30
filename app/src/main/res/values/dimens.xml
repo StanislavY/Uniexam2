@@ -5,7 +5,7 @@
     <dimen name="margin_between_variants_browser">0dp</dimen>
     <dimen name="margin_between_arrows">1dp</dimen>
     <dimen name="check_box_size">15sp</dimen>
-    <dimen name="text_size_main">15sp</dimen>
+    <dimen name="text_size_main">23sp</dimen>
     <dimen name="margin_beetwen_checkbox">1dp</dimen>
     <dimen name="buttons_height">60dp</dimen>
     <dimen name="command_pannel_heigt">50dp</dimen>
